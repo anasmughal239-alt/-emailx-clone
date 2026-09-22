@@ -6,20 +6,36 @@ import { ArrowRight, Moon, Zap } from "lucide-react";
 import { WorkflowPreview } from "./WorkflowPreview";
 import { Marquee } from "./ui/Marquee";
 import { Magnetic } from "./ui/Magnetic";
-import { N8nMark, APOLLO_SRC, SMARTLEAD_SRC, INSTANTLY_SRC, Mono, type ToolLogo } from "./ui/ToolLogos";
-
-const STACK_TICKER = [
-  "Clay", "Apollo", "Instantly", "Smartlead", "n8n", "HubSpot",
-  "Calendly", "Prospeo", "ZoomInfo", "Claude", "Make", "Namecheap",
-];
+import {
+  N8nMark,
+  HubspotMark,
+  ClaudeMark,
+  CalendlyMark,
+  NamecheapMark,
+  APOLLO_SRC,
+  SMARTLEAD_SRC,
+  MAKE_SRC,
+  INSTANTLY_SRC,
+  PROSPEO_SRC,
+  CLAY_SRC,
+  ZOOMINFO_SRC,
+  Mono,
+  type ToolLogo,
+} from "./ui/ToolLogos";
 
 const TOOLS: { name: string; logo: ToolLogo }[] = [
+  { name: "Clay", logo: { kind: "img", src: CLAY_SRC } },
+  { name: "Apollo", logo: { kind: "img", src: APOLLO_SRC } },
   { name: "Instantly", logo: { kind: "img", src: INSTANTLY_SRC } },
   { name: "Smartlead", logo: { kind: "img", src: SMARTLEAD_SRC } },
-  { name: "Apollo", logo: { kind: "img", src: APOLLO_SRC } },
-  { name: "Clay", logo: { kind: "mono", label: "Cl", tint: "rgba(90,200,232,0.18)", fg: "text-[#5ac8e8]" } },
-  { name: "Apify", logo: { kind: "mono", label: "Ap", tint: "rgba(0,54,104,0.18)", fg: "text-[#5ea0ff]" } },
   { name: "n8n", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
+  { name: "HubSpot", logo: { kind: "svg", Comp: HubspotMark, tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]" } },
+  { name: "Calendly", logo: { kind: "svg", Comp: CalendlyMark, tint: "rgba(0,107,255,0.18)", fg: "text-[#4d9bff]" } },
+  { name: "Prospeo", logo: { kind: "img", src: PROSPEO_SRC } },
+  { name: "ZoomInfo", logo: { kind: "img", src: ZOOMINFO_SRC } },
+  { name: "Claude", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
+  { name: "Make", logo: { kind: "img", src: MAKE_SRC } },
+  { name: "Namecheap", logo: { kind: "svg", Comp: NamecheapMark, tint: "rgba(222,55,35,0.18)", fg: "text-[#de3723]" } },
 ];
 
 const STARS = [
@@ -120,39 +136,30 @@ export function Hero() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative z-10 mx-auto mt-16 flex max-w-4xl flex-wrap items-center justify-between gap-x-6 gap-y-4 px-4"
+        className="relative z-10 mx-auto mt-16 max-w-4xl rounded-2xl border border-white/10 bg-[#0B0C0E]/70 px-4 py-3 backdrop-blur-md"
       >
-        {TOOLS.map((t) => (
-          <span
-            key={t.name}
-            className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-[color:var(--color-text-secondary)] sm:text-base"
-          >
-            {t.logo.kind === "img" && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={t.logo.src} alt="" className="h-6 w-6 flex-shrink-0 rounded-md object-contain" />
-            )}
-            {t.logo.kind === "svg" && (
-              <span
-                className={`grid h-6 w-6 flex-shrink-0 place-items-center rounded-md ${t.logo.fg}`}
-                style={{ background: t.logo.tint }}
-              >
-                <t.logo.Comp className="h-3.5 w-3.5" />
-              </span>
-            )}
-            {t.logo.kind === "mono" && <Mono label={t.logo.label} tint={t.logo.tint} fg={t.logo.fg} />}
-            {t.name}
-          </span>
-        ))}
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative z-10 mx-auto mt-8 max-w-4xl rounded-2xl border border-white/10 bg-[#0B0C0E]/70 px-4 py-3 backdrop-blur-md"
-      >
-        <Marquee items={STACK_TICKER} className="opacity-80" />
+        <Marquee
+          items={TOOLS}
+          keyFor={(t, i) => `${t.name}-${i}`}
+          renderItem={(t) => (
+            <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-[color:var(--color-text-secondary)]">
+              {t.logo.kind === "img" && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={t.logo.src} alt="" className="h-6 w-6 flex-shrink-0 rounded-md object-contain" />
+              )}
+              {t.logo.kind === "svg" && (
+                <span
+                  className={`grid h-6 w-6 flex-shrink-0 place-items-center rounded-md ${t.logo.fg}`}
+                  style={{ background: t.logo.tint }}
+                >
+                  <t.logo.Comp className="h-3.5 w-3.5" />
+                </span>
+              )}
+              {t.logo.kind === "mono" && <Mono label={t.logo.label} tint={t.logo.tint} fg={t.logo.fg} />}
+              {t.name}
+            </span>
+          )}
+        />
       </motion.div>
 
       {/* sleep-to-awake background: a warm "dawn" gradient sits underneath at all times;
