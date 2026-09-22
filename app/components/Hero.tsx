@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Moon, Zap } from "lucide-react";
 import { WorkflowPreview } from "./WorkflowPreview";
 import { Marquee } from "./ui/Marquee";
 import { Magnetic } from "./ui/Magnetic";
@@ -21,9 +22,31 @@ const TOOLS: { name: string; logo: ToolLogo }[] = [
   { name: "n8n", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
 ];
 
+const STARS = [
+  { top: "8%", left: "12%", size: 2, delay: 0 },
+  { top: "18%", left: "82%", size: 1.5, delay: 0.4 },
+  { top: "30%", left: "24%", size: 2, delay: 0.8 },
+  { top: "12%", left: "48%", size: 1.5, delay: 1.2 },
+  { top: "40%", left: "68%", size: 2, delay: 0.2 },
+  { top: "22%", left: "6%", size: 1.5, delay: 1.6 },
+  { top: "35%", left: "90%", size: 1.5, delay: 0.6 },
+  { top: "5%", left: "65%", size: 2, delay: 1 },
+  { top: "48%", left: "38%", size: 1.5, delay: 1.4 },
+  { top: "15%", left: "30%", size: 1.5, delay: 0.9 },
+];
+
 export function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+
+  const nightOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
+  const moonOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  const zapOpacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
+  const sleepColor = useTransform(scrollYProgress, [0, 0.3], ["#94969c", "#ffffff"]);
+  const wakeDimOpacity = useTransform(scrollYProgress, [0, 0.4], [0.6, 0]);
+
   return (
-    <section id="top" className="relative overflow-hidden pb-20 pt-40 sm:pt-48">
+    <section id="top" ref={heroRef} className="relative overflow-hidden pb-20 pt-40 sm:pt-48">
       <div className="mx-auto flex max-w-3xl flex-col items-center px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -32,7 +55,14 @@ export function Hero() {
           className="relative isolate mb-7 inline-flex items-center gap-2 rounded-full bg-[#141518] px-4 py-2 text-xs text-[color:var(--color-text-secondary)]"
         >
           <span className="animate-shimmer pointer-events-none absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-amber-300/60 via-fuchsia-300/60 to-sky-300/60 p-px [mask-composite:exclude] [mask-image:linear-gradient(#000_0_0),linear-gradient(#000_0_0)] [-webkit-mask-composite:xor]" />
-          <Sparkles size={13} />
+          <span className="relative inline-grid h-[13px] w-[13px] flex-shrink-0 place-items-center">
+            <motion.span style={{ opacity: moonOpacity }} className="absolute inset-0 grid place-items-center">
+              <Moon size={13} />
+            </motion.span>
+            <motion.span style={{ opacity: zapOpacity }} className="absolute inset-0 grid place-items-center text-amber-300">
+              <Zap size={13} />
+            </motion.span>
+          </span>
           GTM Engineer &amp; Builder — Karachi
         </motion.div>
 
@@ -42,7 +72,8 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
           className="font-[family-name:var(--font-display)] text-[2.75rem] font-normal leading-[1.08] tracking-tight sm:text-6xl"
         >
-          Pipeline that runs while you sleep.
+          Pipeline that runs while you{" "}
+          <motion.span style={{ color: sleepColor }}>sleep</motion.span>.
         </motion.h1>
 
         <motion.p
@@ -124,7 +155,9 @@ export function Hero() {
         <Marquee items={STACK_TICKER} className="opacity-80" />
       </motion.div>
 
-      {/* pixel-beach texture: sits behind the CTA-to-mockup gap, fading to black top and bottom, matching the reference hero */}
+      {/* sleep-to-awake background: a warm "dawn" gradient sits underneath at all times;
+          a dark starfield "night" layer fades out on top of it as the user scrolls
+          through the hero, dramatizing the "runs while you sleep" tagline. */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-[-8%] -z-10 h-[62%] overflow-hidden">
         <div
           className="absolute -inset-x-[6%] inset-y-[-6%]"
@@ -136,6 +169,28 @@ export function Hero() {
             filter: "blur(1.5px) saturate(1.15)",
           }}
         />
+        <motion.div className="absolute -inset-x-[6%] inset-y-[-6%]" style={{ opacity: nightOpacity }}>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(to bottom, #05070c 0%, #0a1020 30%, #0d1526 55%, #0b0f1a 75%, #05070c 100%)",
+            }}
+          />
+          {STARS.map((s, i) => (
+            <span
+              key={i}
+              className="animate-twinkle absolute rounded-full bg-white"
+              style={{
+                top: s.top,
+                left: s.left,
+                width: s.size,
+                height: s.size,
+                animationDelay: `${s.delay}s`,
+              }}
+            />
+          ))}
+        </motion.div>
         <div
           className="absolute inset-0 opacity-50 mix-blend-multiply"
           style={{
@@ -160,7 +215,14 @@ export function Hero() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative mx-auto mt-16 max-w-2xl scroll-mt-24 px-4"
       >
-        <WorkflowPreview />
+        <div className="relative overflow-hidden rounded-2xl">
+          <WorkflowPreview />
+          <motion.div
+            aria-hidden="true"
+            style={{ opacity: wakeDimOpacity }}
+            className="pointer-events-none absolute inset-0 z-20 bg-[#05070c]"
+          />
+        </div>
       </motion.div>
     </section>
   );
