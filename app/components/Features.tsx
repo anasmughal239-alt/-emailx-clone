@@ -110,19 +110,27 @@ export function Features() {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = sectionRefs.current.findIndex((el) => el === entry.target);
-            if (idx !== -1) setActive(idx);
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
-    );
-    sectionRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
+    function handleScroll() {
+      const line = window.innerHeight * 0.45;
+      let closestIdx = 0;
+      let closestDistance = -Infinity;
+      sectionRefs.current.forEach((el, idx) => {
+        if (!el) return;
+        const top = el.getBoundingClientRect().top;
+        if (top <= line && top > closestDistance) {
+          closestDistance = top;
+          closestIdx = idx;
+        }
+      });
+      setActive(closestIdx);
+    }
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return (
