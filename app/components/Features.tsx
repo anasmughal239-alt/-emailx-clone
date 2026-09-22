@@ -146,18 +146,18 @@ export function Features() {
 
       <div className="grid gap-10 lg:grid-cols-[260px_1fr]">
         {/* Sidebar — the four stages of the system, scroll-spy synced to the section in view */}
-        <motion.div {...fadeUp} className="flex flex-col gap-1 lg:sticky lg:top-24 lg:self-start">
+        <motion.div {...fadeUp} className="flex flex-col gap-2 lg:sticky lg:top-24 lg:self-start">
           {SIDEBAR_ITEMS.map((item, i) => (
             <div
               key={item.title}
-              className={`flex gap-3 border-l-2 py-3 pl-4 transition-colors duration-300 ${i === active ? "border-[color:var(--color-accent-green)]" : "border-white/[0.08]"}`}
+              className={`flex gap-3.5 border-l-2 py-4 pl-5 transition-colors duration-300 ${i === active ? "border-[color:var(--color-accent-green)]" : "border-white/[0.08]"}`}
             >
               <item.icon
-                size={16}
+                size={20}
                 className={`mt-0.5 flex-shrink-0 transition-colors duration-300 ${i === active ? "text-[color:var(--color-accent-green)]" : "text-[color:var(--color-text-micro)]"}`}
               />
               <div>
-                <div className={`text-sm font-semibold transition-colors duration-300 ${i === active ? "text-white" : "text-[color:var(--color-text-secondary)]"}`}>
+                <div className={`text-base font-semibold leading-snug transition-colors duration-300 sm:text-lg ${i === active ? "text-white" : "text-[color:var(--color-text-secondary)]"}`}>
                   {item.title}
                 </div>
                 {i === active && (
@@ -165,7 +165,7 @@ export function Features() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     transition={{ duration: 0.25 }}
-                    className="mt-1 overflow-hidden text-xs text-[color:var(--color-text-micro)]"
+                    className="mt-1.5 overflow-hidden text-sm leading-relaxed text-[color:var(--color-text-secondary)]"
                   >
                     {item.desc}
                   </motion.p>
