@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Layers, Headset, MailCheck, GraduationCap, ShoppingBag, Receipt } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -19,6 +19,9 @@ const PROJECTS = [
     stat: "80% reduction in ticket volume",
     tech: "Next.js · Supabase",
     href: "https://supportsyndicate.com",
+    icon: Headset,
+    tint: "rgba(124,58,237,0.18)",
+    fg: "text-violet-300",
   },
   {
     name: "Bounso",
@@ -27,6 +30,9 @@ const PROJECTS = [
     stat: null,
     tech: "TypeScript · React · Vercel",
     href: null,
+    icon: MailCheck,
+    tint: "rgba(16,185,129,0.18)",
+    fg: "text-emerald-300",
   },
   {
     name: "TutorDash",
@@ -35,6 +41,9 @@ const PROJECTS = [
     stat: null,
     tech: "Next.js · Supabase · RLS",
     href: "https://tutorsdash.vercel.app",
+    icon: GraduationCap,
+    tint: "rgba(59,130,246,0.18)",
+    fg: "text-blue-300",
   },
   {
     name: "Dastak",
@@ -43,6 +52,9 @@ const PROJECTS = [
     stat: null,
     tech: "React · Vercel · Meta Pixel",
     href: "https://dastak-tau.vercel.app",
+    icon: ShoppingBag,
+    tint: "rgba(236,72,153,0.18)",
+    fg: "text-pink-300",
   },
   {
     name: "AccuratePayStubs",
@@ -51,6 +63,9 @@ const PROJECTS = [
     stat: null,
     tech: "TypeScript · React · Vercel",
     href: "https://accurate-pay-stubs.vercel.app",
+    icon: Receipt,
+    tint: "rgba(6,182,212,0.18)",
+    fg: "text-cyan-300",
   },
 ];
 
@@ -86,6 +101,8 @@ function ProjectRow({ p }: { p: (typeof PROJECTS)[number] }) {
     if (!rect) return;
     mx.set((e.clientX - rect.left) / rect.width - 0.5);
     my.set((e.clientY - rect.top) / rect.height - 0.5);
+    e.currentTarget.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--my", `${e.clientY - rect.top}px`);
   }
 
   function handleMouseLeave() {
@@ -94,6 +111,7 @@ function ProjectRow({ p }: { p: (typeof PROJECTS)[number] }) {
   }
 
   const Wrapper = p.href ? motion.a : motion.div;
+  const Icon = p.icon;
 
   return (
     <motion.div key={p.name} {...fadeUp} style={{ perspective: 800 }}>
@@ -103,26 +121,34 @@ function ProjectRow({ p }: { p: (typeof PROJECTS)[number] }) {
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
-        className="group flex flex-col gap-2 p-6 transition-colors hover:bg-white/[0.02] sm:flex-row sm:items-center sm:justify-between"
+        className="spotlight group flex flex-col gap-3 p-6 transition-colors hover:bg-white/[0.02] sm:flex-row sm:items-center sm:justify-between"
       >
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="text-lg font-semibold">{p.name}</span>
-            <span className="text-xs text-[color:var(--color-text-micro)]">
-              · {p.role}
-            </span>
-            {p.href && (
-              <ArrowUpRight
-                size={14}
-                className="text-[color:var(--color-text-micro)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            )}
+        <div className="flex gap-3.5">
+          <span
+            className={`grid h-11 w-11 flex-shrink-0 place-items-center rounded-xl ${p.fg}`}
+            style={{ background: p.tint }}
+          >
+            <Icon size={20} />
+          </span>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-lg font-semibold">{p.name}</span>
+              <span className="text-xs text-[color:var(--color-text-micro)]">
+                · {p.role}
+              </span>
+              {p.href && (
+                <ArrowUpRight
+                  size={14}
+                  className="text-[color:var(--color-text-micro)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              )}
+            </div>
+            <p className="mt-1 max-w-xl text-sm text-[color:var(--color-text-secondary)]">
+              {p.desc}
+            </p>
           </div>
-          <p className="mt-1 max-w-xl text-sm text-[color:var(--color-text-secondary)]">
-            {p.desc}
-          </p>
         </div>
-        <div className="flex flex-shrink-0 flex-col items-start gap-1 sm:items-end">
+        <div className="flex flex-shrink-0 flex-col items-start gap-1 pl-[3.4rem] sm:items-end sm:pl-0">
           {p.stat && (
             <span className="text-sm font-semibold text-[color:var(--color-accent-green)]">
               {p.stat}
@@ -138,6 +164,11 @@ function ProjectRow({ p }: { p: (typeof PROJECTS)[number] }) {
 export function Work() {
   return (
     <section id="work-list" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-24">
+      <motion.div {...fadeUp} className="mb-4 flex justify-center">
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-[#141518] px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
+          <Layers size={12} /> Work
+        </div>
+      </motion.div>
       <motion.div {...fadeUp} className="mb-14 text-center">
         <h2 className="font-[family-name:var(--font-display)] text-3xl font-normal tracking-tight sm:text-4xl">
           Shipped, live, end to end
