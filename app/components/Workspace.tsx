@@ -18,6 +18,7 @@ import {
   PLUSVIBES_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
+  AIARK_SRC,
   OCEAN_SRC,
   GROK_SRC,
   OUTLOOK_SRC,
@@ -60,7 +61,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
       { name: "Ocean.io", desc: "Lookalike accounts", logo: { kind: "img", src: OCEAN_SRC } },
       { name: "ZoomInfo", desc: "Account data", logo: { kind: "img", src: ZOOMINFO_SRC } },
       { name: "Prospeo", desc: "Email finding", logo: { kind: "img", src: PROSPEO_SRC } },
-      { name: "AI Ark", desc: "ICP lists and signals", logo: { kind: "mono", label: "AI", tint: "rgba(124,58,237,0.18)", fg: "text-violet-600" } },
+      { name: "AI Ark", desc: "ICP lists and signals", logo: { kind: "img", src: AIARK_SRC } },
     ],
   },
   {

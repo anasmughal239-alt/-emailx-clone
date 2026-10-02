@@ -72,6 +72,7 @@ export const OUTLOOK_SRC = "/logos/outlook.png";
 export const GROK_SRC = "/logos/grok.png";
 export const CALENDLY_SRC = "/logos/calendly.png";
 export const OCEAN_SRC = "/logos/ocean.png";
+export const AIARK_SRC = "/logos/aiark.png";
 export const SLACK_SRC = "/logos/slack.png";
 
 /** Colored initials fallback for tools with no freely-licensed logo asset available. */
