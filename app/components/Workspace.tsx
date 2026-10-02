@@ -17,6 +17,7 @@ import {
   PLUSVIBES_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
+  NEVERBOUNCE_SRC,
   Mono,
   type ToolLogo,
 } from "./ui/ToolLogos";
@@ -63,7 +64,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
       { name: "Instantly", desc: "Campaign sending", logo: { kind: "img", src: INSTANTLY_SRC } },
       { name: "Smartlead", desc: "Campaign sending", logo: { kind: "img", src: SMARTLEAD_SRC } },
       { name: "BounceBan", desc: "Verification", logo: { kind: "img", src: BOUNCEBAN_SRC } },
-      { name: "NeverBounce", desc: "Verification", logo: { kind: "mono", label: "NB", tint: "rgba(16,185,129,0.18)", fg: "text-emerald-700" } },
+      { name: "NeverBounce", desc: "Verification", logo: { kind: "img", src: NEVERBOUNCE_SRC } },
       { name: "Google Workspace", desc: "Inboxes and warmup", logo: { kind: "mono", label: "G", tint: "rgba(66,133,244,0.18)", fg: "text-[#2f6fd6]" } },
       { name: "Namecheap", desc: "Sending domains", logo: { kind: "svg", Comp: NamecheapMark, tint: "rgba(222,55,35,0.18)", fg: "text-[#de3723]" } },
     ],

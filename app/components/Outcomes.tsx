@@ -20,6 +20,7 @@ import {
   PROSPEO_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
+  NEVERBOUNCE_SRC,
   INSTANTLY_SRC,
   SMARTLEAD_SRC,
   PLUSVIBES_SRC,
@@ -54,7 +55,7 @@ const TOOL: Record<string, Tool> = {
   },
   neverbounce: {
     name: "NeverBounce",
-    logo: { kind: "mono", label: "NB", tint: "rgba(16,185,129,0.18)", fg: "text-emerald-700" },
+    logo: { kind: "img", src: NEVERBOUNCE_SRC },
   },
   heyreach: {
     name: "HeyReach",
