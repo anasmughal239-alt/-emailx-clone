@@ -20,6 +20,7 @@ import {
   PROSPEO_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
+  HEYREACH_SRC,
   NEVERBOUNCE_SRC,
   INSTANTLY_SRC,
   SMARTLEAD_SRC,
@@ -59,7 +60,7 @@ const TOOL: Record<string, Tool> = {
   },
   heyreach: {
     name: "HeyReach",
-    logo: { kind: "mono", label: "HR", tint: "rgba(99,102,241,0.18)", fg: "text-indigo-600" },
+    logo: { kind: "img", src: HEYREACH_SRC },
   },
   n8n: {
     name: "n8n",

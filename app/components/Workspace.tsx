@@ -17,6 +17,7 @@ import {
   PLUSVIBES_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
+  HEYREACH_SRC,
   GMAIL_SRC,
   NEVERBOUNCE_SRC,
   Mono,
@@ -79,7 +80,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
       { name: "Slack", desc: "Interested-reply alerts", logo: { kind: "img", src: SLACK_SRC } },
       { name: "HubSpot", desc: "CRM sync", logo: { kind: "svg", Comp: HubspotMark, tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]" } },
       { name: "Calendly", desc: "Demo booking", logo: { kind: "svg", Comp: CalendlyMark, tint: "rgba(0,107,255,0.18)", fg: "text-[#0062e6]" } },
-      { name: "HeyReach", desc: "LinkedIn outreach", logo: { kind: "mono", label: "HR", tint: "rgba(99,102,241,0.18)", fg: "text-indigo-600" } },
+      { name: "HeyReach", desc: "LinkedIn outreach", logo: { kind: "img", src: HEYREACH_SRC } },
     ],
   },
 ];
