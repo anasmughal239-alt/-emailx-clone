@@ -8,9 +8,7 @@ import {
   ClaudeMark,
   CalendlyMark,
   NamecheapMark,
-  APOLLO_SRC,
   SMARTLEAD_SRC,
-  MAKE_SRC,
   INSTANTLY_SRC,
   PROSPEO_SRC,
   CLAY_SRC,
@@ -50,12 +48,12 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
     title: "Data and enrichment",
     tools: [
       { name: "Clay", desc: "Enrichment waterfalls", logo: { kind: "img", src: CLAY_SRC } },
-      { name: "Apollo", desc: "Contact data", logo: { kind: "img", src: APOLLO_SRC } },
-      { name: "Ocean.io", desc: "Lookalike accounts", logo: { kind: "mono", label: "O", tint: "rgba(37,150,190,0.18)", fg: "text-[#5fc4e6]" } },
+      { name: "Apollo", desc: "Contact data", logo: { kind: "mono", label: "Ap", tint: "rgba(245,158,11,0.2)", fg: "text-amber-700" } },
+      { name: "Ocean.io", desc: "Lookalike accounts", logo: { kind: "mono", label: "O", tint: "rgba(37,150,190,0.18)", fg: "text-[#1790b3]" } },
       { name: "ZoomInfo", desc: "Account data", logo: { kind: "img", src: ZOOMINFO_SRC } },
       { name: "Prospeo", desc: "Email finding", logo: { kind: "img", src: PROSPEO_SRC } },
       { name: "PlusVibes", desc: "Inbox placement", logo: { kind: "img", src: PLUSVIBES_SRC } },
-      { name: "AI Ark", desc: "ICP lists and signals", logo: { kind: "mono", label: "AI", tint: "rgba(124,58,237,0.18)", fg: "text-violet-300" } },
+      { name: "AI Ark", desc: "ICP lists and signals", logo: { kind: "mono", label: "AI", tint: "rgba(124,58,237,0.18)", fg: "text-violet-600" } },
     ],
   },
   {
@@ -65,8 +63,8 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
       { name: "Instantly", desc: "Campaign sending", logo: { kind: "img", src: INSTANTLY_SRC } },
       { name: "Smartlead", desc: "Campaign sending", logo: { kind: "img", src: SMARTLEAD_SRC } },
       { name: "BounceBan", desc: "Verification", logo: { kind: "img", src: BOUNCEBAN_SRC } },
-      { name: "NeverBounce", desc: "Verification", logo: { kind: "mono", label: "NB", tint: "rgba(16,185,129,0.18)", fg: "text-emerald-300" } },
-      { name: "Google Workspace", desc: "Inboxes and warmup", logo: { kind: "mono", label: "G", tint: "rgba(66,133,244,0.18)", fg: "text-[#8ab4f8]" } },
+      { name: "NeverBounce", desc: "Verification", logo: { kind: "mono", label: "NB", tint: "rgba(16,185,129,0.18)", fg: "text-emerald-700" } },
+      { name: "Google Workspace", desc: "Inboxes and warmup", logo: { kind: "mono", label: "G", tint: "rgba(66,133,244,0.18)", fg: "text-[#2f6fd6]" } },
       { name: "Namecheap", desc: "Sending domains", logo: { kind: "svg", Comp: NamecheapMark, tint: "rgba(222,55,35,0.18)", fg: "text-[#de3723]" } },
     ],
   },
@@ -75,11 +73,11 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
     tools: [
       { name: "Claude", desc: "Copy, classification, scoring", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
       { name: "n8n", desc: "Reply routing", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
-      { name: "Make", desc: "Workflow automation", logo: { kind: "img", src: MAKE_SRC } },
-      { name: "Slack", desc: "Interested-reply alerts", logo: { kind: "mono", label: "S", tint: "rgba(224,30,90,0.18)", fg: "text-[#ff6fa5]" } },
+      { name: "Make", desc: "Workflow automation", logo: { kind: "mono", label: "Mk", tint: "rgba(124,58,237,0.15)", fg: "text-violet-700" } },
+      { name: "Slack", desc: "Interested-reply alerts", logo: { kind: "mono", label: "S", tint: "rgba(224,30,90,0.18)", fg: "text-[#d6336c]" } },
       { name: "HubSpot", desc: "CRM sync", logo: { kind: "svg", Comp: HubspotMark, tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]" } },
-      { name: "Calendly", desc: "Demo booking", logo: { kind: "svg", Comp: CalendlyMark, tint: "rgba(0,107,255,0.18)", fg: "text-[#4d9bff]" } },
-      { name: "HeyReach", desc: "LinkedIn outreach", logo: { kind: "mono", label: "HR", tint: "rgba(99,102,241,0.18)", fg: "text-indigo-300" } },
+      { name: "Calendly", desc: "Demo booking", logo: { kind: "svg", Comp: CalendlyMark, tint: "rgba(0,107,255,0.18)", fg: "text-[#0062e6]" } },
+      { name: "HeyReach", desc: "LinkedIn outreach", logo: { kind: "mono", label: "HR", tint: "rgba(99,102,241,0.18)", fg: "text-indigo-600" } },
     ],
   },
 ];
@@ -96,7 +94,7 @@ function ToolCard({ tool }: { tool: Tool }) {
       variants={tileItem}
       whileHover={{ y: -2 }}
       onMouseMove={handleMouseMove}
-      className="spotlight flex items-center gap-3 rounded-xl border border-white/[0.08] bg-[#141518] px-3.5 py-3 transition-colors hover:border-white/15"
+      className="spotlight flex items-center gap-3 rounded-xl border border-line/[0.08] bg-surface px-3.5 py-3 transition-colors hover:border-line/15"
     >
       {tool.logo.kind === "img" && (
         // eslint-disable-next-line @next/next/no-img-element
@@ -123,7 +121,7 @@ export function Workspace() {
   return (
     <section id="stack" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-24">
       <motion.div {...fadeUp} className="mb-12 text-center">
-        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-[#141518] px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
+        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-surface px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
           <Workflow size={12} /> The stack
         </div>
         <h2 className="font-[family-name:var(--font-display)] text-3xl font-normal tracking-tight sm:text-4xl">

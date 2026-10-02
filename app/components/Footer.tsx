@@ -57,7 +57,7 @@ function FAQAccordion() {
           <a
             key={t}
             href={`#faq-${t.replace(/\s+/g, "-").toLowerCase()}`}
-            className="whitespace-nowrap text-sm text-[color:var(--color-text-secondary)] transition-colors hover:text-white lg:whitespace-normal lg:py-1"
+            className="whitespace-nowrap text-sm text-[color:var(--color-text-secondary)] transition-colors hover:text-fg lg:whitespace-normal lg:py-1"
           >
             {t}
           </a>
@@ -75,7 +75,7 @@ function FAQAccordion() {
                 return (
                   <div
                     key={item.q}
-                    className="rounded-2xl border border-white/[0.08] bg-[#141518]"
+                    className="rounded-2xl border border-line/[0.08] bg-surface"
                   >
                     <button
                       onClick={() => setOpenKey(isOpen ? null : key)}
@@ -148,7 +148,7 @@ export function Footer() {
           <p className="max-w-xs text-sm text-[color:var(--color-text-secondary)] sm:text-right">
             Everything you need to know. Can&apos;t find what you&apos;re
             looking for?{" "}
-            <a href="#contact" className="text-white underline underline-offset-2">
+            <a href="#contact" className="text-fg underline underline-offset-2">
               Talk to me
             </a>
             .
@@ -169,8 +169,9 @@ export function Footer() {
             className="absolute inset-0 -z-10"
             style={{
               backgroundImage: [
-                "linear-gradient(to bottom, rgba(11,12,14,0.15) 0%, rgba(11,12,14,0.55) 55%, #0B0C0E 100%)",
-                "linear-gradient(to bottom, #16305A 0%, #2E5C4E 30%, #3F7A4E 46%, #7DAA4A 58%, #C8A24A 72%, #8A6A38 100%)",
+                "linear-gradient(to bottom, #fbf8f3 0%, rgba(251,248,243,0) 30%, rgba(251,248,243,0) 70%, #fbf8f3 100%)",
+                "radial-gradient(ellipse 60% 70% at 50% 60%, rgba(255,196,120,0.85) 0%, rgba(247,163,92,0.45) 45%, transparent 75%)",
+                "linear-gradient(to bottom, #cfd4ec 0%, #f6e0cf 55%, #fde9d2 100%)",
               ].join(", "),
               imageRendering: "pixelated",
               filter: "saturate(1.1)",
@@ -181,12 +182,12 @@ export function Footer() {
             className="absolute inset-0 -z-10 opacity-40"
             style={{
               backgroundImage:
-                "repeating-linear-gradient(90deg, rgba(0,0,0,0.15) 0 9px, transparent 9px 18px), repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0 9px, transparent 9px 18px)",
+                "repeating-linear-gradient(90deg, rgba(120,80,40,0.07) 0 9px, transparent 9px 18px), repeating-linear-gradient(0deg, rgba(120,80,40,0.07) 0 9px, transparent 9px 18px)",
               mixBlendMode: "multiply",
             }}
           />
 
-          <h2 className="font-[family-name:var(--font-display)] text-3xl font-normal tracking-tight text-white sm:text-4xl">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl font-normal tracking-tight text-fg sm:text-4xl">
             Let&apos;s get your pipeline moving.
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -195,7 +196,7 @@ export function Footer() {
                 href="https://wa.me/447577305736"
                 whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-black transition-colors hover:bg-neutral-200"
+                className="flex items-center gap-2 rounded-full bg-fg px-6 py-3 font-medium text-bg transition-colors hover:bg-fg/85"
               >
                 Book a call <ArrowRight size={16} />
               </motion.a>
@@ -204,7 +205,7 @@ export function Footer() {
               href="#work-list"
               whileHover={{ scale: 1.04, y: -1 }}
               whileTap={{ scale: 0.97 }}
-              className="rounded-full border border-white/20 bg-black/20 px-6 py-3 font-medium text-white backdrop-blur transition-colors hover:bg-black/30"
+              className="rounded-full border border-line/20 bg-surface/60 px-6 py-3 font-medium text-fg backdrop-blur transition-colors hover:bg-surface"
             >
               See the work
             </motion.a>
@@ -232,7 +233,7 @@ export function Footer() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-sm text-[color:var(--color-text-secondary)] hover:text-white"
+                    className="text-sm text-[color:var(--color-text-secondary)] hover:text-fg"
                   >
                     {link.label}
                   </a>
@@ -241,7 +242,7 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-10 border-t border-white/[0.08] pt-6 text-sm text-[color:var(--color-text-micro)]">
+        <div className="mt-10 border-t border-line/[0.08] pt-6 text-sm text-[color:var(--color-text-micro)]">
           © 2026 Anas Ashfaq Mughal. All rights reserved.
         </div>
       </div>

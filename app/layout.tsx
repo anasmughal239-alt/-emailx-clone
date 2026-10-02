@@ -30,10 +30,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${newsreader.variable} ${inter.variable}`}>
-      <body className="relative bg-[#0B0C0E] font-sans text-white antialiased">
+      <body className="relative bg-bg font-sans text-fg antialiased">
         <div
           aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-0 opacity-[0.03] mix-blend-overlay"
+          className="pointer-events-none fixed inset-0 z-0 opacity-[0.05] mix-blend-multiply"
           style={{ backgroundImage: `url("${NOISE}")` }}
         />
         <div className="relative z-10">{children}</div>

@@ -21,7 +21,7 @@ export function GlowRing({
         className={`absolute -inset-[10%] -z-10 rounded-3xl bg-gradient-to-tr opacity-60 blur-2xl ${gradients[variant]}`}
       />
       <div className={`h-full rounded-3xl bg-gradient-to-tr p-[2px] ${gradients[variant]}`}>
-        <div className="h-full rounded-[calc(1.5rem-2px)] bg-[#0E0F12]">{children}</div>
+        <div className="h-full rounded-[calc(1.5rem-2px)] bg-inset">{children}</div>
       </div>
     </div>
   );

@@ -7,9 +7,9 @@ interface MacWindowProps {
 export function MacWindow({ label, children, className = "" }: MacWindowProps) {
   return (
     <div
-      className={`overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101012] ${className}`}
+      className={`overflow-hidden rounded-2xl border border-line/[0.08] bg-inset ${className}`}
     >
-      <div className="flex items-center justify-between border-b border-white/[0.08] px-4 py-3">
+      <div className="flex items-center justify-between border-b border-line/[0.08] px-4 py-3">
         <div className="flex gap-1.5">
           <span className="h-2.5 w-2.5 rounded-full bg-[#E2685A]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#E3BD5C]" />

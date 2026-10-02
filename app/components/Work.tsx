@@ -21,7 +21,7 @@ const PROJECTS = [
     href: "https://supportsyndicate.com",
     icon: Headset,
     tint: "rgba(124,58,237,0.18)",
-    fg: "text-violet-300",
+    fg: "text-violet-600",
   },
   {
     name: "Bounso",
@@ -32,7 +32,7 @@ const PROJECTS = [
     href: null,
     icon: MailCheck,
     tint: "rgba(16,185,129,0.18)",
-    fg: "text-emerald-300",
+    fg: "text-emerald-700",
   },
   {
     name: "TutorDash",
@@ -43,7 +43,7 @@ const PROJECTS = [
     href: "https://tutorsdash.vercel.app",
     icon: GraduationCap,
     tint: "rgba(59,130,246,0.18)",
-    fg: "text-blue-300",
+    fg: "text-blue-600",
   },
   {
     name: "Dastak",
@@ -54,7 +54,7 @@ const PROJECTS = [
     href: "https://dastak-tau.vercel.app",
     icon: ShoppingBag,
     tint: "rgba(236,72,153,0.18)",
-    fg: "text-pink-300",
+    fg: "text-pink-600",
   },
   {
     name: "AccuratePayStubs",
@@ -65,7 +65,7 @@ const PROJECTS = [
     href: "https://accurate-pay-stubs.vercel.app",
     icon: Receipt,
     tint: "rgba(6,182,212,0.18)",
-    fg: "text-cyan-300",
+    fg: "text-cyan-700",
   },
 ];
 
@@ -121,7 +121,7 @@ function ProjectRow({ p }: { p: (typeof PROJECTS)[number] }) {
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
-        className="spotlight group flex flex-col gap-3 p-6 transition-colors hover:bg-white/[0.02] sm:flex-row sm:items-center sm:justify-between"
+        className="spotlight group flex flex-col gap-3 p-6 transition-colors hover:bg-line/[0.02] sm:flex-row sm:items-center sm:justify-between"
       >
         <div className="flex gap-3.5">
           <span
@@ -165,7 +165,7 @@ export function Work() {
   return (
     <section id="work-list" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-24">
       <motion.div {...fadeUp} className="mb-4 flex justify-center">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-[#141518] px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-surface px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
           <Layers size={12} /> Work
         </div>
       </motion.div>
@@ -179,7 +179,7 @@ export function Work() {
         </p>
       </motion.div>
 
-      <div className="flex flex-col divide-y divide-white/[0.06] rounded-3xl border border-white/[0.08] bg-[#141518]">
+      <div className="flex flex-col divide-y divide-line/[0.06] rounded-3xl border border-line/[0.08] bg-surface">
         {PROJECTS.map((p) => (
           <ProjectRow key={p.name} p={p} />
         ))}
@@ -196,7 +196,7 @@ export function Work() {
           <motion.span
             key={tech}
             variants={tagItem}
-            className="rounded-full border border-white/[0.08] bg-[#141518] px-3.5 py-1.5 text-xs font-medium text-[color:var(--color-text-secondary)]"
+            className="rounded-full border border-line/[0.08] bg-surface px-3.5 py-1.5 text-xs font-medium text-[color:var(--color-text-secondary)]"
           >
             {tech}
           </motion.span>

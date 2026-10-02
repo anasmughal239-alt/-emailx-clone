@@ -12,9 +12,7 @@ import {
   ClaudeMark,
   CalendlyMark,
   NamecheapMark,
-  APOLLO_SRC,
   SMARTLEAD_SRC,
-  MAKE_SRC,
   INSTANTLY_SRC,
   PROSPEO_SRC,
   CLAY_SRC,
@@ -25,16 +23,16 @@ import {
 
 const TOOLS: { name: string; logo: ToolLogo }[] = [
   { name: "Clay", logo: { kind: "img", src: CLAY_SRC } },
-  { name: "Apollo", logo: { kind: "img", src: APOLLO_SRC } },
+  { name: "Apollo", logo: { kind: "mono", label: "Ap", tint: "rgba(245,158,11,0.2)", fg: "text-amber-700" } },
   { name: "Instantly", logo: { kind: "img", src: INSTANTLY_SRC } },
   { name: "Smartlead", logo: { kind: "img", src: SMARTLEAD_SRC } },
   { name: "n8n", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
   { name: "HubSpot", logo: { kind: "svg", Comp: HubspotMark, tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]" } },
-  { name: "Calendly", logo: { kind: "svg", Comp: CalendlyMark, tint: "rgba(0,107,255,0.18)", fg: "text-[#4d9bff]" } },
+  { name: "Calendly", logo: { kind: "svg", Comp: CalendlyMark, tint: "rgba(0,107,255,0.18)", fg: "text-[#0062e6]" } },
   { name: "Prospeo", logo: { kind: "img", src: PROSPEO_SRC } },
   { name: "ZoomInfo", logo: { kind: "img", src: ZOOMINFO_SRC } },
   { name: "Claude", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
-  { name: "Make", logo: { kind: "img", src: MAKE_SRC } },
+  { name: "Make", logo: { kind: "mono", label: "Mk", tint: "rgba(124,58,237,0.15)", fg: "text-violet-700" } },
   { name: "Namecheap", logo: { kind: "svg", Comp: NamecheapMark, tint: "rgba(222,55,35,0.18)", fg: "text-[#de3723]" } },
 ];
 
@@ -58,7 +56,7 @@ export function Hero() {
   const nightOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
   const moonOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
   const zapOpacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
-  const sleepColor = useTransform(scrollYProgress, [0, 0.3], ["#94969c", "#ffffff"]);
+  const sleepColor = useTransform(scrollYProgress, [0, 0.3], ["#a0a4ad", "#15171c"]);
   const wakeDimOpacity = useTransform(scrollYProgress, [0, 0.4], [0.6, 0]);
 
   return (
@@ -68,14 +66,14 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative isolate mb-7 inline-flex items-center gap-2 rounded-full bg-[#141518] px-4 py-2 text-xs text-[color:var(--color-text-secondary)]"
+          className="relative isolate mb-7 inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-xs text-[color:var(--color-text-secondary)]"
         >
           <span className="animate-shimmer pointer-events-none absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-amber-300/60 via-fuchsia-300/60 to-sky-300/60 p-px [mask-composite:exclude] [mask-image:linear-gradient(#000_0_0),linear-gradient(#000_0_0)] [-webkit-mask-composite:xor]" />
           <span className="relative inline-grid h-[13px] w-[13px] flex-shrink-0 place-items-center">
             <motion.span style={{ opacity: moonOpacity }} className="absolute inset-0 grid place-items-center">
               <Moon size={13} />
             </motion.span>
-            <motion.span style={{ opacity: zapOpacity }} className="absolute inset-0 grid place-items-center text-amber-300">
+            <motion.span style={{ opacity: zapOpacity }} className="absolute inset-0 grid place-items-center text-amber-700">
               <Zap size={13} />
             </motion.span>
           </span>
@@ -114,7 +112,7 @@ export function Hero() {
               href="https://wa.me/447577305736"
               whileHover={{ scale: 1.04, y: -1 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-black transition-colors hover:bg-neutral-200"
+              className="flex items-center gap-2 rounded-full bg-fg px-6 py-3 font-medium text-bg transition-colors hover:bg-fg/85"
             >
               Book a call <ArrowRight size={16} />
             </motion.a>
@@ -123,7 +121,7 @@ export function Hero() {
             href="#results"
             whileHover={{ scale: 1.04, y: -1 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 font-medium text-white transition-colors hover:border-white/30"
+            className="flex items-center gap-2 rounded-full border border-line/15 px-6 py-3 font-medium text-fg transition-colors hover:border-line/30"
           >
             See results
           </motion.a>
@@ -136,7 +134,7 @@ export function Hero() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative z-10 mx-auto mt-16 max-w-4xl rounded-2xl border border-white/10 bg-[#0B0C0E]/70 px-4 py-3 backdrop-blur-md"
+        className="relative z-10 mx-auto mt-16 max-w-4xl rounded-2xl border border-line/10 bg-bg/70 px-4 py-3 backdrop-blur-md"
       >
         <Marquee
           items={TOOLS}
@@ -170,10 +168,10 @@ export function Hero() {
           className="absolute -inset-x-[6%] inset-y-[-6%]"
           style={{
             backgroundImage: [
-              "radial-gradient(circle at 50% 38%, #ffd9a0 0%, #f2a35c 6%, transparent 30%)",
-              "linear-gradient(to bottom, #2b3f63 0%, #2b3f63 22%, #4a5a80 22%, #4a5a80 34%, #a9714f 34%, #a9714f 42%, #e0955a 42%, #e0955a 50%, #163044 50%, #163044 68%, #0f2233 68%, #0f2233 78%, #c9a15a 78%, #c9a15a 88%, #a9803f 88%, #a9803f 100%)",
+              "radial-gradient(ellipse 46% 52% at 50% 46%, rgba(255,196,120,0.95) 0%, rgba(247,163,92,0.55) 38%, transparent 72%)",
+              "linear-gradient(to bottom, #fbf8f3 0%, #fde9d2 38%, #f9d3b0 66%, #fbf8f3 100%)",
             ].join(", "),
-            filter: "blur(1.5px) saturate(1.15)",
+            filter: "saturate(1.1)",
           }}
         />
         <motion.div className="absolute -inset-x-[6%] inset-y-[-6%]" style={{ opacity: nightOpacity }}>
@@ -181,13 +179,13 @@ export function Hero() {
             className="absolute inset-0"
             style={{
               backgroundImage:
-                "linear-gradient(to bottom, #05070c 0%, #0a1020 30%, #0d1526 55%, #0b0f1a 75%, #05070c 100%)",
+                "linear-gradient(to bottom, #fbf8f3 0%, #cfd4ec 32%, #b9bfe0 58%, #d9d6ea 80%, #fbf8f3 100%)",
             }}
           />
           {STARS.map((s, i) => (
             <span
               key={i}
-              className="animate-twinkle absolute rounded-full bg-white"
+              className="animate-twinkle absolute rounded-full bg-fg"
               style={{
                 top: s.top,
                 left: s.left,
@@ -199,17 +197,17 @@ export function Hero() {
           ))}
         </motion.div>
         <div
-          className="absolute inset-0 opacity-50 mix-blend-multiply"
+          className="absolute inset-0 opacity-40 mix-blend-multiply"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(90deg, rgba(0,0,0,0.16) 0 7px, transparent 7px 14px), repeating-linear-gradient(0deg, rgba(0,0,0,0.16) 0 7px, transparent 7px 14px)",
+              "repeating-linear-gradient(90deg, rgba(120,80,40,0.08) 0 7px, transparent 7px 14px), repeating-linear-gradient(0deg, rgba(120,80,40,0.08) 0 7px, transparent 7px 14px)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, #0B0C0E 0%, transparent 22%, transparent 58%, #0B0C0E 100%)",
+              "linear-gradient(to bottom, #fbf8f3 0%, transparent 22%, transparent 58%, #fbf8f3 100%)",
           }}
         />
       </div>
@@ -227,7 +225,7 @@ export function Hero() {
           <motion.div
             aria-hidden="true"
             style={{ opacity: wakeDimOpacity }}
-            className="pointer-events-none absolute inset-0 z-20 bg-[#05070c]"
+            className="pointer-events-none absolute inset-0 z-20 bg-bg"
           />
         </div>
       </motion.div>

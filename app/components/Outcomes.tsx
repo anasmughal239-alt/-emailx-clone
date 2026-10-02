@@ -26,7 +26,7 @@ const STACK_STEPS: { label: string; role: string; logo: ToolLogo }[] = [
   {
     label: "WhatsApp Business API",
     role: "Delivered the solar-installer campaign",
-    logo: { kind: "mono", label: "W", tint: "rgba(37,211,102,0.18)", fg: "text-[#25d366]" },
+    logo: { kind: "mono", label: "W", tint: "rgba(37,211,102,0.18)", fg: "text-[#128c4a]" },
   },
 ];
 
@@ -40,7 +40,7 @@ export function Outcomes() {
   return (
     <section id="results" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-24">
       <motion.div {...fadeUp} className="mb-4 flex justify-center">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-[#141518] px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
+        <div className="inline-flex items-center gap-1.5 rounded-full bg-surface px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
           <TrendingUp size={12} /> Proof
         </div>
       </motion.div>
@@ -61,7 +61,7 @@ export function Outcomes() {
         {...fadeUp}
         whileHover={{ y: -3 }}
         onMouseMove={handleSpotlightMove}
-        className="spotlight mt-6 rounded-3xl border border-white/[0.08] bg-[#141518] p-6 transition-colors hover:border-white/15"
+        className="spotlight mt-6 rounded-3xl border border-line/[0.08] bg-surface p-6 transition-colors hover:border-line/15"
       >
         <div className="mb-5 flex flex-wrap items-center gap-3">
           <CountUp to={3} suffix="x" className="text-3xl font-semibold text-[color:var(--color-accent-green)]" />
@@ -75,11 +75,11 @@ export function Outcomes() {
               Generic cold template
             </div>
             <div className="flex flex-col gap-3">
-              <div className="max-w-[90%] rounded-2xl rounded-bl-sm bg-[#1A1C20] px-4 py-2.5 text-sm text-[color:var(--color-text-secondary)]">
+              <div className="max-w-[90%] rounded-2xl rounded-bl-sm bg-surface-2 px-4 py-2.5 text-sm text-[color:var(--color-text-secondary)]">
                 Hi there, I wanted to reach out because our platform helps
                 companies like yours scale outbound...
               </div>
-              <div className="ml-auto flex max-w-[75%] items-center gap-2 rounded-2xl rounded-br-sm bg-rose-500/10 px-4 py-2.5 text-sm text-rose-300">
+              <div className="ml-auto flex max-w-[75%] items-center gap-2 rounded-2xl rounded-br-sm bg-rose-500/10 px-4 py-2.5 text-sm text-rose-600">
                 <XCircle size={14} /> Not interested
               </div>
             </div>
@@ -90,12 +90,12 @@ export function Outcomes() {
               Personalized, signal-based
             </div>
             <div className="flex flex-col gap-3">
-              <div className="max-w-[90%] rounded-2xl rounded-bl-sm bg-[#1A1C20] px-4 py-2.5 text-sm text-[color:var(--color-text-secondary)]">
+              <div className="max-w-[90%] rounded-2xl rounded-bl-sm bg-surface-2 px-4 py-2.5 text-sm text-[color:var(--color-text-secondary)]">
                 Saw Relate closed a seed round this week — congrats. Curious
                 how you&apos;re planning to scale outbound with the new
                 team...
               </div>
-              <div className="ml-auto flex max-w-[75%] items-center gap-2 rounded-2xl rounded-br-sm bg-emerald-500/10 px-4 py-2.5 text-sm text-emerald-300">
+              <div className="ml-auto flex max-w-[75%] items-center gap-2 rounded-2xl rounded-br-sm bg-emerald-500/10 px-4 py-2.5 text-sm text-emerald-700">
                 <CheckCircle2 size={14} /> Sounds good, book a call?
               </div>
             </div>
@@ -107,14 +107,14 @@ export function Outcomes() {
         {...fadeUp}
         whileHover={{ y: -3 }}
         onMouseMove={handleSpotlightMove}
-        className="spotlight mt-6 rounded-3xl border border-white/[0.08] bg-[#141518] p-6 transition-colors hover:border-white/15"
+        className="spotlight mt-6 rounded-3xl border border-line/[0.08] bg-surface p-6 transition-colors hover:border-line/15"
       >
         <div className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[color:var(--color-text-micro)]">
           <Wrench size={13} /> The stack behind the outreach
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           {STACK_STEPS.map((s, i) => (
-            <div key={s.label} className="relative rounded-xl border border-white/[0.06] bg-[#1A1C20] p-3.5">
+            <div key={s.label} className="relative rounded-xl border border-line/[0.06] bg-surface-2 p-3.5">
               <div className="mb-2 flex h-8 items-center justify-between">
                 <span className="text-[10px] font-semibold text-[color:var(--color-text-micro)]">
                   Step {i + 1}

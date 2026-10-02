@@ -61,7 +61,7 @@ function FeatureHeader({
 }) {
   return (
     <div className="mb-5 flex items-center gap-2.5">
-      <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/5 text-white">
+      <span className="grid h-8 w-8 place-items-center rounded-lg bg-line/5 text-fg">
         {icon}
       </span>
       <h3 className="text-xl font-semibold">{children}</h3>
@@ -86,7 +86,7 @@ function SignalRow({
     <motion.div
       variants={rowItem}
       whileHover={{ x: 3 }}
-      className="flex items-center gap-3 rounded-xl border border-white/[0.06] px-3.5 py-3 transition-colors hover:border-white/15"
+      className="flex items-center gap-3 rounded-xl border border-line/[0.06] px-3.5 py-3 transition-colors hover:border-line/15"
     >
       <span
         className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-lg"
@@ -98,7 +98,7 @@ function SignalRow({
         <div className="text-sm font-semibold">{title}</div>
         <div className="text-xs text-[color:var(--color-text-micro)]">{sub}</div>
       </div>
-      <span className="flex-shrink-0 rounded-full bg-white/5 px-2.5 py-1 text-[10px] font-medium text-[color:var(--color-text-secondary)]">
+      <span className="flex-shrink-0 rounded-full bg-line/5 px-2.5 py-1 text-[10px] font-medium text-[color:var(--color-text-secondary)]">
         {tag}
       </span>
     </motion.div>
@@ -136,7 +136,7 @@ export function Features() {
   return (
     <section id="services" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-24">
       <motion.div {...fadeUp} className="mb-14 text-center">
-        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-[#141518] px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
+        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-surface px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
           <Sparkles size={12} /> What I do
         </div>
         <h2 className="font-[family-name:var(--font-display)] text-3xl font-normal tracking-tight sm:text-4xl">
@@ -150,14 +150,14 @@ export function Features() {
           {SIDEBAR_ITEMS.map((item, i) => (
             <div
               key={item.title}
-              className={`flex gap-3.5 border-l-2 py-4 pl-5 transition-colors duration-300 ${i === active ? "border-[color:var(--color-accent-green)]" : "border-white/[0.08]"}`}
+              className={`flex gap-3.5 border-l-2 py-4 pl-5 transition-colors duration-300 ${i === active ? "border-[color:var(--color-accent-green)]" : "border-line/[0.08]"}`}
             >
               <item.icon
                 size={20}
                 className={`mt-0.5 flex-shrink-0 transition-colors duration-300 ${i === active ? "text-[color:var(--color-accent-green)]" : "text-[color:var(--color-text-micro)]"}`}
               />
               <div>
-                <div className={`text-base font-semibold leading-snug transition-colors duration-300 sm:text-lg ${i === active ? "text-white" : "text-[color:var(--color-text-secondary)]"}`}>
+                <div className={`text-base font-semibold leading-snug transition-colors duration-300 sm:text-lg ${i === active ? "text-fg" : "text-[color:var(--color-text-secondary)]"}`}>
                   {item.title}
                 </div>
                 {i === active && (
@@ -182,12 +182,12 @@ export function Features() {
             <GlowRing variant="iridescent">
               <MacWindow label="Watching 12 sources">
                 <div className="flex flex-col gap-2.5">
-                  <div className="rounded-xl border border-white/[0.06] px-3.5 py-3">
+                  <div className="rounded-xl border border-line/[0.06] px-3.5 py-3">
                     <div className="text-[10px] uppercase tracking-wide text-[color:var(--color-text-micro)]">
                       Signal intelligence
                     </div>
                     <div className="mt-1 flex items-center gap-2 text-sm font-semibold">
-                      <Sparkles size={13} className="text-white/70" />
+                      <Sparkles size={13} className="text-fg/70" />
                       Find the reason to reach out.
                     </div>
                   </div>
@@ -199,28 +199,28 @@ export function Features() {
                     className="flex flex-col gap-2.5"
                   >
                     <SignalRow
-                      icon={<Linkedin size={15} className="text-blue-300" />}
+                      icon={<Linkedin size={15} className="text-blue-600" />}
                       bg="rgba(91,147,255,0.12)"
                       title="LinkedIn post engagement"
                       sub="Commented on your founder-led sales post"
                       tag="High intent"
                     />
                     <SignalRow
-                      icon={<Briefcase size={15} className="text-blue-300" />}
+                      icon={<Briefcase size={15} className="text-blue-600" />}
                       bg="rgba(91,147,255,0.12)"
                       title="New role detected"
                       sub="Maya Chen became VP Sales at Relate"
                       tag="Verified"
                     />
                     <SignalRow
-                      icon={<Target size={15} className="text-emerald-300" />}
+                      icon={<Target size={15} className="text-emerald-700" />}
                       bg="rgba(16,185,129,0.12)"
                       title="ICP match confirmed"
                       sub="B2B SaaS · Europe · 46 employees"
                       tag="92% fit"
                     />
                     <SignalRow
-                      icon={<DollarSign size={15} className="text-amber-300" />}
+                      icon={<DollarSign size={15} className="text-amber-700" />}
                       bg="rgba(222,164,76,0.12)"
                       title="Funding announced"
                       sub="Relate raised a €4.2M seed round"
@@ -239,13 +239,13 @@ export function Features() {
               className="absolute -inset-[8%] -z-10 rounded-3xl bg-gradient-to-br from-[#FF7E5F] via-[#FEB47B] to-[#FFE0D3] opacity-60 blur-2xl"
             />
             <div className="rounded-2xl bg-gradient-to-br from-[#FF7E5F] via-[#FEB47B] to-[#FFE0D3] p-[2px]">
-              <div className="flex flex-col gap-3 rounded-[calc(1rem-2px)] bg-[#0E0F12] p-4">
-                <div className="rounded-xl border border-white/[0.08] bg-[#141518] px-4 py-3.5">
+              <div className="flex flex-col gap-3 rounded-[calc(1rem-2px)] bg-inset p-4">
+                <div className="rounded-xl border border-line/[0.08] bg-surface px-4 py-3.5">
                   <div className="text-[10px] uppercase tracking-wide text-[color:var(--color-text-micro)]">
                     Prospect profile
                   </div>
                   <div className="mt-1.5 flex items-center gap-2">
-                    <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-full bg-white/10 text-xs font-semibold text-white/70">
+                    <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-full bg-line/10 text-xs font-semibold text-fg/70">
                       LB
                     </span>
                     <div>
@@ -260,8 +260,8 @@ export function Features() {
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#101012]">
-                  <div className="flex items-center justify-between border-b border-white/[0.08] px-4 py-3">
+                <div className="overflow-hidden rounded-xl border border-line/[0.08] bg-inset">
+                  <div className="flex items-center justify-between border-b border-line/[0.08] px-4 py-3">
                     <div className="flex items-center gap-3">
                       <div className="flex gap-1.5">
                         <span className="h-2.5 w-2.5 rounded-full bg-[#E2685A]" />
@@ -272,7 +272,7 @@ export function Features() {
                         Lead Qualification
                       </span>
                     </div>
-                    <span className="rounded-full border border-white/[0.08] px-2.5 py-1 text-[10px] uppercase tracking-wide text-[color:var(--color-text-micro)]">
+                    <span className="rounded-full border border-line/[0.08] px-2.5 py-1 text-[10px] uppercase tracking-wide text-[color:var(--color-text-micro)]">
                       Analyzing fit…
                     </span>
                   </div>
@@ -281,7 +281,7 @@ export function Features() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.6 }}
-                    className="flex flex-col divide-y divide-white/[0.06] px-4"
+                    className="flex flex-col divide-y divide-line/[0.06] px-4"
                   >
                     {[
                       { n: "01", label: "Business model", state: "ok" as const },
@@ -301,16 +301,16 @@ export function Features() {
                             <CheckCircle2 size={16} className="text-[color:var(--color-accent-green)]" />
                           )}
                           {row.state === "pending" && (
-                            <Clock size={16} className="animate-spin text-blue-300" />
+                            <Clock size={16} className="animate-spin text-blue-600" />
                           )}
                           {row.state === "waiting" && (
-                            <span className="block h-4 w-4 rounded-full border border-white/15" />
+                            <span className="block h-4 w-4 rounded-full border border-line/15" />
                           )}
                         </motion.span>
                       </motion.div>
                     ))}
                   </motion.div>
-                  <div className="flex items-center gap-3 border-t border-white/[0.06] bg-[#141518] px-4 py-3">
+                  <div className="flex items-center gap-3 border-t border-line/[0.06] bg-surface px-4 py-3">
                     <span className="grid h-8 w-8 flex-shrink-0 place-items-center rounded-lg border border-[color:var(--color-accent-green)]/40 bg-[color:var(--color-accent-green)]/10">
                       <Sparkles size={13} className="text-[color:var(--color-accent-green)]" />
                     </span>
@@ -338,18 +338,18 @@ export function Features() {
               className="absolute -inset-[8%] -z-10 rounded-3xl bg-gradient-to-br from-[#8FD3F4] via-[#A5C4F3] to-[#CBE6FF] opacity-50 blur-2xl"
             />
             <div className="rounded-2xl bg-gradient-to-br from-[#8FD3F4] via-[#A5C4F3] to-[#CBE6FF] p-[2px]">
-              <div className="flex flex-col gap-3 rounded-[calc(1rem-2px)] bg-[#0E0F12] p-4">
+              <div className="flex flex-col gap-3 rounded-[calc(1rem-2px)] bg-inset p-4">
                 <div className="relative grid grid-cols-2 gap-3 py-2">
                   <svg
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 h-full w-full text-white/10"
+                    className="pointer-events-none absolute inset-0 h-full w-full text-fg/10"
                   >
                     <line x1="25%" y1="18%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="3 4" />
                     <line x1="75%" y1="18%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="3 4" />
                     <line x1="25%" y1="82%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="3 4" />
                     <line x1="75%" y1="82%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="3 4" />
                   </svg>
-                  <span className="absolute left-1/2 top-1/2 z-10 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-lg border border-amber-400/40 bg-[#0E0F12] text-amber-300">
+                  <span className="absolute left-1/2 top-1/2 z-10 grid h-9 w-9 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-lg border border-amber-400/40 bg-inset text-amber-700">
                     <Zap size={15} />
                   </span>
                   {[
@@ -360,27 +360,27 @@ export function Features() {
                   ].map((s) => (
                     <div
                       key={s.label}
-                      className="relative z-10 flex items-center gap-2 rounded-lg border border-white/[0.08] bg-[#141518] px-2.5 py-2 text-xs text-[color:var(--color-text-secondary)]"
+                      className="relative z-10 flex items-center gap-2 rounded-lg border border-line/[0.08] bg-surface px-2.5 py-2 text-xs text-[color:var(--color-text-secondary)]"
                     >
                       <s.icon size={13} />
                       {s.label}
                     </div>
                   ))}
                 </div>
-                <div className="rounded-xl border border-white/[0.08] bg-[#141518] p-4">
+                <div className="rounded-xl border border-line/[0.08] bg-surface p-4">
                   <div className="mb-2 flex items-center justify-between">
                     <span className="text-xs font-semibold">Written in your voice</span>
                   </div>
                   <p className="text-sm leading-relaxed text-[color:var(--color-text-secondary)]">
-                    Hey Luca — saw <span className="text-white">Studio North closed a project with a Bay Area client</span>{" "}
+                    Hey Luca — saw <span className="text-fg">Studio North closed a project with a Bay Area client</span>{" "}
                     this month. I help founders run outbound without hiring an SDR —{" "}
-                    <span className="text-white">worth a 15-minute look?</span>
+                    <span className="text-fg">worth a 15-minute look?</span>
                   </p>
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {["Personalization", "Relevance", "Timing", "Tone check"].map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-white/5 px-2.5 py-1 text-[10px] text-[color:var(--color-text-micro)]"
+                        className="rounded-full bg-line/5 px-2.5 py-1 text-[10px] text-[color:var(--color-text-micro)]"
                       >
                         {tag}
                       </span>
@@ -419,7 +419,7 @@ export function Features() {
                     ].map((step) => (
                       <div
                         key={step.label}
-                        className="flex items-center justify-between rounded-lg border border-white/[0.06] px-3 py-2 text-xs"
+                        className="flex items-center justify-between rounded-lg border border-line/[0.06] px-3 py-2 text-xs"
                       >
                         <span className="flex items-center gap-2 text-[color:var(--color-text-secondary)]">
                           <step.icon size={12} /> {step.label}
@@ -429,17 +429,17 @@ export function Features() {
                     ))}
                   </div>
                   <div className="flex flex-col gap-2">
-                    <div className="ml-auto max-w-[90%] rounded-xl rounded-br-sm bg-[color:var(--color-accent-green)]/10 px-3 py-2 text-xs text-emerald-200">
+                    <div className="ml-auto max-w-[90%] rounded-xl rounded-br-sm bg-[color:var(--color-accent-green)]/10 px-3 py-2 text-xs text-emerald-700">
                       Worth a short look?
                     </div>
-                    <div className="max-w-[90%] rounded-xl rounded-bl-sm bg-[#1A1C20] px-3 py-2 text-xs text-[color:var(--color-text-secondary)]">
+                    <div className="max-w-[90%] rounded-xl rounded-bl-sm bg-surface-2 px-3 py-2 text-xs text-[color:var(--color-text-secondary)]">
                       Thanks for connecting — happy to send the one-pager.
                     </div>
                   </div>
                 </div>
-                <div className="mt-3 flex items-center justify-between border-t border-white/[0.06] pt-3 text-xs">
+                <div className="mt-3 flex items-center justify-between border-t border-line/[0.06] pt-3 text-xs">
                   <span className="text-[color:var(--color-text-micro)]">Follow-up paced across channels</span>
-                  <span className="rounded-full bg-white/5 px-2.5 py-1 text-[10px] font-semibold">
+                  <span className="rounded-full bg-line/5 px-2.5 py-1 text-[10px] font-semibold">
                     Response coming
                   </span>
                 </div>

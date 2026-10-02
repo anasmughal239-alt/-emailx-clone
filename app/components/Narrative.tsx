@@ -5,9 +5,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 function ConstructionLine() {
   return (
-    <div aria-hidden="true" className="relative h-px w-full bg-white/[0.08]">
-      <span className="absolute -top-[3px] left-0 h-[7px] w-px bg-white/25" />
-      <span className="absolute -top-[3px] right-0 h-[7px] w-px bg-white/25" />
+    <div aria-hidden="true" className="relative h-px w-full bg-line/[0.08]">
+      <span className="absolute -top-[3px] left-0 h-[7px] w-px bg-line/25" />
+      <span className="absolute -top-[3px] right-0 h-[7px] w-px bg-line/25" />
     </div>
   );
 }
@@ -15,8 +15,8 @@ function ConstructionLine() {
 function Crosshair({ className = "" }: { className?: string }) {
   return (
     <span aria-hidden="true" className={`pointer-events-none absolute h-3 w-3 ${className}`}>
-      <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/20" />
-      <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white/20" />
+      <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-line/20" />
+      <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-line/20" />
     </span>
   );
 }
@@ -40,7 +40,7 @@ export function Narrative() {
         <Crosshair className="-bottom-1.5 -left-1.5" />
         <Crosshair className="-bottom-1.5 -right-1.5" />
 
-        <div className="flex flex-col gap-8 text-2xl font-medium leading-snug text-white sm:text-3xl">
+        <div className="flex flex-col gap-8 text-2xl font-medium leading-snug text-fg sm:text-3xl">
           <p>Great outbound takes more than a good email.</p>
           <ConstructionLine />
           <p>
