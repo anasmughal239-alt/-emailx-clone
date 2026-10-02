@@ -15,7 +15,6 @@ import {
   ZOOMINFO_SRC,
   APOLLO_SRC,
   PLUSVIBES_SRC,
-  EMAILBISON_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
   Mono,
@@ -54,14 +53,13 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
       { name: "Ocean.io", desc: "Lookalike accounts", logo: { kind: "mono", label: "O", tint: "rgba(37,150,190,0.18)", fg: "text-[#1790b3]" } },
       { name: "ZoomInfo", desc: "Account data", logo: { kind: "img", src: ZOOMINFO_SRC } },
       { name: "Prospeo", desc: "Email finding", logo: { kind: "img", src: PROSPEO_SRC } },
-      { name: "PlusVibes", desc: "Inbox placement", logo: { kind: "img", src: PLUSVIBES_SRC } },
       { name: "AI Ark", desc: "ICP lists and signals", logo: { kind: "mono", label: "AI", tint: "rgba(124,58,237,0.18)", fg: "text-violet-600" } },
     ],
   },
   {
     title: "Sending and deliverability",
     tools: [
-      { name: "Email Bison", desc: "Sending at volume", logo: { kind: "img", src: EMAILBISON_SRC } },
+      { name: "PlusVibes", desc: "Sending at volume", logo: { kind: "img", src: PLUSVIBES_SRC } },
       { name: "Instantly", desc: "Campaign sending", logo: { kind: "img", src: INSTANTLY_SRC } },
       { name: "Smartlead", desc: "Campaign sending", logo: { kind: "img", src: SMARTLEAD_SRC } },
       { name: "BounceBan", desc: "Verification", logo: { kind: "img", src: BOUNCEBAN_SRC } },
