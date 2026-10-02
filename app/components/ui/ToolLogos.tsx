@@ -65,6 +65,7 @@ export const EMAILBISON_SRC = "/logos/emailbison.png";
 export const BOUNCEBAN_SRC = "/logos/bounceban.png";
 /** Real Slack mark (from user-provided file). */
 export const NEVERBOUNCE_SRC = "/logos/neverbounce.png";
+export const GMAIL_SRC = "/logos/gmail.svg";
 export const SLACK_SRC = "/logos/slack.png";
 
 /** Colored initials fallback for tools with no freely-licensed logo asset available. */
