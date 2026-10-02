@@ -18,6 +18,7 @@ import {
   CLAY_SRC,
   ZOOMINFO_SRC,
   APOLLO_SRC,
+  MAKE_SRC,
   Mono,
   type ToolLogo,
 } from "./ui/ToolLogos";
@@ -33,7 +34,7 @@ const TOOLS: { name: string; logo: ToolLogo }[] = [
   { name: "Prospeo", logo: { kind: "img", src: PROSPEO_SRC } },
   { name: "ZoomInfo", logo: { kind: "img", src: ZOOMINFO_SRC } },
   { name: "Claude", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
-  { name: "Make", logo: { kind: "mono", label: "Mk", tint: "rgba(124,58,237,0.15)", fg: "text-violet-700" } },
+  { name: "Make", logo: { kind: "img", src: MAKE_SRC } },
   { name: "Namecheap", logo: { kind: "svg", Comp: NamecheapMark, tint: "rgba(222,55,35,0.18)", fg: "text-[#de3723]" } },
 ];
 

@@ -14,6 +14,7 @@ import {
   CLAY_SRC,
   ZOOMINFO_SRC,
   APOLLO_SRC,
+  MAKE_SRC,
   PLUSVIBES_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
@@ -76,7 +77,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
     tools: [
       { name: "Claude", desc: "Copy, classification, scoring", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
       { name: "n8n", desc: "Reply routing", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
-      { name: "Make", desc: "Workflow automation", logo: { kind: "mono", label: "Mk", tint: "rgba(124,58,237,0.15)", fg: "text-violet-700" } },
+      { name: "Make", desc: "Workflow automation", logo: { kind: "img", src: MAKE_SRC } },
       { name: "Slack", desc: "Interested-reply alerts", logo: { kind: "img", src: SLACK_SRC } },
       { name: "HubSpot", desc: "CRM sync", logo: { kind: "svg", Comp: HubspotMark, tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]" } },
       { name: "Calendly", desc: "Demo booking", logo: { kind: "svg", Comp: CalendlyMark, tint: "rgba(0,107,255,0.18)", fg: "text-[#0062e6]" } },
