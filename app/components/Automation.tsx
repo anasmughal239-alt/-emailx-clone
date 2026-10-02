@@ -15,8 +15,9 @@ import {
   Search,
   Database,
   Users,
+  FileSpreadsheet,
 } from "lucide-react";
-import { HubspotMark } from "./ui/ToolLogos";
+import { HubspotMark, CLAY_SRC } from "./ui/ToolLogos";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -30,6 +31,15 @@ function SheetsMark({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
       <path d="M11.318 12.545H7.91v-1.909h3.41v1.91zm0-3.273H7.91V7.364h3.41v1.909zm4.772 3.273h-3.41v-1.909h3.41v1.91zm0-3.273h-3.41V7.364h3.41v1.909zM14.727 0H4.91C3.856 0 3 .857 3 1.909v20.182C3 23.143 3.856 24 4.909 24h14.182c1.052 0 1.909-.857 1.909-1.909V7.09L14.727 0z" />
+    </svg>
+  );
+}
+
+/** Real LinkedIn mark (simple-icons, official hex #0A66C2). */
+function LinkedinMark({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
     </svg>
   );
 }
@@ -131,12 +141,18 @@ function ToolBadge({
   );
 }
 
-const HUB_NODES = [
-  { label: "Clay", tint: "rgba(90,200,232,0.18)", fg: "text-[#5ac8e8]", short: "Cl" },
-  { label: "Apollo", tint: "rgba(255,236,0,0.18)", fg: "text-[#ffec00]", short: "Ap" },
-  { label: "LinkedIn", tint: "rgba(10,102,194,0.18)", fg: "text-[#0a66c2]", short: "Li" },
-  { label: "CSV", tint: "rgba(16,185,129,0.18)", fg: "text-emerald-300", short: "Cs" },
-  { label: "CRM", tint: "rgba(124,58,237,0.18)", fg: "text-violet-300", short: "Cr" },
+const HUB_NODES: { label: string; tint: string; fg: string; icon: React.ReactNode }[] = [
+  {
+    label: "Clay",
+    tint: "rgba(255,255,255,0.08)",
+    fg: "text-white",
+    // eslint-disable-next-line @next/next/no-img-element
+    icon: <img src={CLAY_SRC} alt="" className="h-5 w-5 rounded-md object-contain" />,
+  },
+  { label: "Apollo", tint: "rgba(255,236,0,0.18)", fg: "text-[#ffec00]", icon: <span className="text-[11px] font-bold">Ap</span> },
+  { label: "LinkedIn", tint: "rgba(10,102,194,0.22)", fg: "text-[#3b9bf0]", icon: <LinkedinMark className="h-4 w-4" /> },
+  { label: "CSV", tint: "rgba(16,185,129,0.18)", fg: "text-emerald-300", icon: <FileSpreadsheet size={16} /> },
+  { label: "CRM", tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]", icon: <HubspotMark className="h-4 w-4" /> },
 ];
 
 function ConnectHub() {
@@ -159,7 +175,8 @@ function ConnectHub() {
         return (
           <span
             key={n.label}
-            className={`absolute grid h-9 w-9 animate-float place-items-center rounded-full text-[11px] font-bold ${n.fg}`}
+            title={n.label}
+            className={`absolute grid h-9 w-9 animate-float place-items-center rounded-full ${n.fg}`}
             style={{
               background: n.tint,
               left: `calc(50% + ${x}px - 18px)`,
@@ -167,7 +184,7 @@ function ConnectHub() {
               animationDelay: `${i * 0.4}s`,
             }}
           >
-            {n.short}
+            {n.icon}
           </span>
         );
       })}

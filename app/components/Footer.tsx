@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ArrowRight, TrendingUp } from "lucide-react";
-import { CountUp } from "./ui/CountUp";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { Magnetic } from "./ui/Magnetic";
 
 const fadeUp = {
@@ -138,30 +137,6 @@ const FOOTER_COLUMNS = [
 export function Footer() {
   return (
     <footer>
-      <section className="mx-auto max-w-5xl px-4 py-16">
-        <motion.div
-          {...fadeUp}
-          className="rounded-3xl border border-white/[0.08] bg-[#141518] p-8 sm:p-10"
-        >
-          <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[color:var(--color-text-micro)]">
-            <TrendingUp size={13} /> Case study
-          </div>
-          <h3 className="font-[family-name:var(--font-display)] text-2xl font-normal">
-            How a Shopify review-scraping pipeline fed 2,484 leads into one
-            campaign
-          </h3>
-          <div className="mt-4 flex items-center gap-2">
-            <CountUp
-              to={2484}
-              className="text-3xl font-semibold text-[color:var(--color-accent-green)]"
-            />
-            <span className="text-sm text-[color:var(--color-text-secondary)]">
-              deduplicated leads generated
-            </span>
-          </div>
-        </motion.div>
-      </section>
-
       <section className="mx-auto max-w-5xl px-4 py-16">
         <motion.div
           {...fadeUp}
