@@ -29,7 +29,7 @@ import {
   N8nMark,
   HubspotMark,
   ClaudeMark,
-  CalendlyMark,
+  CALENDLY_SRC,
   type ToolLogo,
 } from "./ui/ToolLogos";
 import { CountUp } from "./ui/CountUp";
@@ -78,7 +78,7 @@ const TOOL: Record<string, Tool> = {
   },
   calendly: {
     name: "Calendly",
-    logo: { kind: "svg", Comp: CalendlyMark, tint: "rgba(0,107,255,0.18)", fg: "text-[#0062e6]" },
+    logo: { kind: "img", src: CALENDLY_SRC },
   },
 };
 
