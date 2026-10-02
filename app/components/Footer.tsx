@@ -216,9 +216,8 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-3">
           <div>
             <div className="flex items-center gap-2 font-semibold">
-              <span className="grid h-7 w-7 place-items-center rounded-lg bg-white text-sm font-bold text-black">
-                A
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="" width={30} height={30} className="h-[30px] w-[30px]" />
               Anas Ashfaq Mughal
             </div>
             <p className="mt-2 text-sm text-[color:var(--color-text-micro)]">

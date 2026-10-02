@@ -21,9 +21,8 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <nav className="flex w-full max-w-5xl items-center justify-between gap-4 rounded-2xl border border-white/10 bg-[#121316]/80 px-5 py-2.5 backdrop-blur-xl">
         <a href="#top" className="flex items-center gap-2.5 font-semibold">
-          <span className="grid h-7 w-7 place-items-center rounded-lg bg-white text-sm font-bold text-black">
-            A
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="" width={30} height={30} className="h-[30px] w-[30px]" />
           <span>Anas Ashfaq Mughal</span>
         </a>
 
