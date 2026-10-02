@@ -127,9 +127,7 @@ export function Hero() {
         >
           <Magnetic>
             <motion.a
-              href="https://cal.com/anas-ashfaq-mughal/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#book"
               whileHover={{ scale: 1.04, y: -1 }}
               whileTap={{ scale: 0.97 }}
               className="flex items-center gap-2 rounded-full bg-fg px-6 py-3 font-medium text-bg transition-colors hover:bg-fg/85"

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { Magnetic } from "./ui/Magnetic";
+import { CalEmbed } from "./ui/CalEmbed";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -193,9 +194,7 @@ export function Footer() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Magnetic>
               <motion.a
-                href="https://cal.com/anas-ashfaq-mughal/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#book"
                 whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.97 }}
                 className="flex items-center gap-2 rounded-full bg-fg px-6 py-3 font-medium text-bg transition-colors hover:bg-fg/85"
@@ -212,6 +211,29 @@ export function Footer() {
               See the work
             </motion.a>
           </div>
+
+          <div
+            id="book"
+            className="mx-auto mt-12 max-w-4xl scroll-mt-24 overflow-hidden rounded-3xl border border-line/[0.1] bg-surface p-2 text-left shadow-sm sm:p-4"
+          >
+            <CalEmbed />
+          </div>
+          <p className="mt-4 text-sm text-[color:var(--color-text-secondary)]">
+            Prefer another way?{" "}
+            <a
+              href="https://cal.com/anas-ashfaq-mughal/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fg underline underline-offset-2"
+            >
+              Open the booking page
+            </a>{" "}
+            or{" "}
+            <a href="https://wa.me/447577305736" className="text-fg underline underline-offset-2">
+              message me on WhatsApp
+            </a>
+            .
+          </p>
         </motion.div>
       </section>
 

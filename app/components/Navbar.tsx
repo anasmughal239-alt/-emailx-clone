@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-const CALL_LINK = "https://cal.com/anas-ashfaq-mughal/30min";
+const CALL_LINK = "#book";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,8 +38,6 @@ export function Navbar() {
           <Magnetic strength={10}>
             <motion.a
               href={CALL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
               className="rounded-full bg-fg px-4 py-2 text-sm font-semibold text-bg transition-colors hover:bg-fg/85"
@@ -74,8 +72,6 @@ export function Navbar() {
           <div className="mt-3 border-t border-line/10 pt-3">
             <a
               href={CALL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
               className="block rounded-full bg-fg px-4 py-2.5 text-center text-sm font-semibold text-bg"
             >
               Book a call
