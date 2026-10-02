@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-const CALL_LINK = "https://whereby.com/gtmeanas";
+const CALL_LINK = "https://cal.com/anas-ashfaq-mughal/30min";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);

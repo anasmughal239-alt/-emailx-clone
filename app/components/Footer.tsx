@@ -193,7 +193,7 @@ export function Footer() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Magnetic>
               <motion.a
-                href="https://whereby.com/gtmeanas"
+                href="https://cal.com/anas-ashfaq-mughal/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.04, y: -1 }}
