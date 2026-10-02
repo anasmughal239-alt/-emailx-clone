@@ -13,6 +13,7 @@ import {
   PROSPEO_SRC,
   CLAY_SRC,
   ZOOMINFO_SRC,
+  APOLLO_SRC,
   PLUSVIBES_SRC,
   EMAILBISON_SRC,
   BOUNCEBAN_SRC,
@@ -48,7 +49,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
     title: "Data and enrichment",
     tools: [
       { name: "Clay", desc: "Enrichment waterfalls", logo: { kind: "img", src: CLAY_SRC } },
-      { name: "Apollo", desc: "Contact data", logo: { kind: "mono", label: "Ap", tint: "rgba(245,158,11,0.2)", fg: "text-amber-700" } },
+      { name: "Apollo", desc: "Contact data", logo: { kind: "img", src: APOLLO_SRC } },
       { name: "Ocean.io", desc: "Lookalike accounts", logo: { kind: "mono", label: "O", tint: "rgba(37,150,190,0.18)", fg: "text-[#1790b3]" } },
       { name: "ZoomInfo", desc: "Account data", logo: { kind: "img", src: ZOOMINFO_SRC } },
       { name: "Prospeo", desc: "Email finding", logo: { kind: "img", src: PROSPEO_SRC } },

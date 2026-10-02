@@ -17,13 +17,14 @@ import {
   PROSPEO_SRC,
   CLAY_SRC,
   ZOOMINFO_SRC,
+  APOLLO_SRC,
   Mono,
   type ToolLogo,
 } from "./ui/ToolLogos";
 
 const TOOLS: { name: string; logo: ToolLogo }[] = [
   { name: "Clay", logo: { kind: "img", src: CLAY_SRC } },
-  { name: "Apollo", logo: { kind: "mono", label: "Ap", tint: "rgba(245,158,11,0.2)", fg: "text-amber-700" } },
+  { name: "Apollo", logo: { kind: "img", src: APOLLO_SRC } },
   { name: "Instantly", logo: { kind: "img", src: INSTANTLY_SRC } },
   { name: "Smartlead", logo: { kind: "img", src: SMARTLEAD_SRC } },
   { name: "n8n", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
