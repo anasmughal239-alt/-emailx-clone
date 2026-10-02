@@ -18,6 +18,7 @@ import {
   PLUSVIBES_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
+  GROK_SRC,
   OUTLOOK_SRC,
   HEYREACH_SRC,
   GMAIL_SRC,
@@ -78,6 +79,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
     title: "Automation and routing",
     tools: [
       { name: "Claude", desc: "Copy, classification, scoring", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
+      { name: "Grok Bot", desc: "Reply handling", logo: { kind: "img", src: GROK_SRC } },
       { name: "n8n", desc: "Reply routing", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
       { name: "Make", desc: "Workflow automation", logo: { kind: "img", src: MAKE_SRC } },
       { name: "Slack", desc: "Interested-reply alerts", logo: { kind: "img", src: SLACK_SRC } },

@@ -20,6 +20,7 @@ import {
   PROSPEO_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
+  GROK_SRC,
   HEYREACH_SRC,
   NEVERBOUNCE_SRC,
   INSTANTLY_SRC,
@@ -58,6 +59,7 @@ const TOOL: Record<string, Tool> = {
     name: "NeverBounce",
     logo: { kind: "img", src: NEVERBOUNCE_SRC },
   },
+  grok: { name: "Grok Bot", logo: { kind: "img", src: GROK_SRC } },
   heyreach: {
     name: "HeyReach",
     logo: { kind: "img", src: HEYREACH_SRC },
@@ -134,7 +136,7 @@ const STEPS: {
     icon: CalendarCheck,
     tint: "rgba(16,185,129,0.16)",
     fg: "text-emerald-700",
-    tools: [TOOL.n8n, TOOL.slack, TOOL.hubspot, TOOL.calendly],
+    tools: [TOOL.grok, TOOL.n8n, TOOL.slack, TOOL.hubspot, TOOL.calendly],
   },
 ];
 
