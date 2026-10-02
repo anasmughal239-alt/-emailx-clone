@@ -18,6 +18,7 @@ import {
   PLUSVIBES_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
+  OUTLOOK_SRC,
   HEYREACH_SRC,
   GMAIL_SRC,
   NEVERBOUNCE_SRC,
@@ -70,6 +71,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
       { name: "NeverBounce", desc: "Verification", logo: { kind: "img", src: NEVERBOUNCE_SRC } },
       { name: "Google Workspace", desc: "Inboxes and warmup", logo: { kind: "img", src: GMAIL_SRC } },
       { name: "Namecheap", desc: "Sending domains", logo: { kind: "img", src: NAMECHEAP_SRC } },
+      { name: "Outlook", desc: "Microsoft 365 inboxes", logo: { kind: "img", src: OUTLOOK_SRC } },
     ],
   },
   {
