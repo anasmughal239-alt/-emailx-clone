@@ -51,7 +51,6 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
     tools: [
       { name: "Clay", desc: "Enrichment waterfalls", logo: { kind: "img", src: CLAY_SRC } },
       { name: "Apollo", desc: "Contact data", logo: { kind: "img", src: APOLLO_SRC } },
-      { name: "Apify", desc: "Custom scraping", logo: { kind: "mono", label: "Ap", tint: "rgba(0,54,104,0.18)", fg: "text-[#5ea0ff]" } },
       { name: "Ocean.io", desc: "Lookalike accounts", logo: { kind: "mono", label: "O", tint: "rgba(37,150,190,0.18)", fg: "text-[#5fc4e6]" } },
       { name: "ZoomInfo", desc: "Account data", logo: { kind: "img", src: ZOOMINFO_SRC } },
       { name: "Prospeo", desc: "Email finding", logo: { kind: "img", src: PROSPEO_SRC } },

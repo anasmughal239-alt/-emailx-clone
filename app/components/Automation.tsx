@@ -17,7 +17,7 @@ import {
   Users,
   FileSpreadsheet,
 } from "lucide-react";
-import { HubspotMark, CLAY_SRC } from "./ui/ToolLogos";
+import { HubspotMark, CLAY_SRC, ZOOMINFO_SRC } from "./ui/ToolLogos";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -149,7 +149,13 @@ const HUB_NODES: { label: string; tint: string; fg: string; icon: React.ReactNod
     // eslint-disable-next-line @next/next/no-img-element
     icon: <img src={CLAY_SRC} alt="" className="h-5 w-5 rounded-md object-contain" />,
   },
-  { label: "Apollo", tint: "rgba(255,236,0,0.18)", fg: "text-[#ffec00]", icon: <span className="text-[11px] font-bold">Ap</span> },
+  {
+    label: "ZoomInfo",
+    tint: "rgba(255,255,255,0.08)",
+    fg: "text-white",
+    // eslint-disable-next-line @next/next/no-img-element
+    icon: <img src={ZOOMINFO_SRC} alt="" className="h-5 w-5 rounded-md object-contain" />,
+  },
   { label: "LinkedIn", tint: "rgba(10,102,194,0.22)", fg: "text-[#3b9bf0]", icon: <LinkedinMark className="h-4 w-4" /> },
   { label: "CSV", tint: "rgba(16,185,129,0.18)", fg: "text-emerald-300", icon: <FileSpreadsheet size={16} /> },
   { label: "CRM", tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]", icon: <HubspotMark className="h-4 w-4" /> },
@@ -327,7 +333,7 @@ export function Automation() {
       <div className="mt-6 grid gap-6 md:grid-cols-3">
         {/* Connect anywhere */}
         <Card>
-          <CardHeader title="Connect anywhere" desc="Bring Clay, Apollo, LinkedIn, CSVs, and your CRM into one flow." />
+          <CardHeader title="Connect anywhere" desc="Bring Clay, ZoomInfo, LinkedIn, CSVs, and your CRM into one flow." />
           <ConnectHub />
         </Card>
 

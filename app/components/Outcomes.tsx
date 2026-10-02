@@ -14,11 +14,6 @@ const fadeUp = {
 
 const STACK_STEPS: { label: string; role: string; logo: ToolLogo }[] = [
   {
-    label: "Apify",
-    role: "Scraped Shopify App Store reviews for lead signal",
-    logo: { kind: "mono", label: "Ap", tint: "rgba(0,54,104,0.18)", fg: "text-[#5ea0ff]" },
-  },
-  {
     label: "Clay",
     role: "Enriched and deduplicated the list",
     logo: { kind: "img", src: CLAY_SRC },
@@ -117,10 +112,10 @@ export function Outcomes() {
         <div className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[color:var(--color-text-micro)]">
           <Wrench size={13} /> The stack behind the outreach
         </div>
-        <div className="grid gap-3 sm:grid-cols-4">
+        <div className="grid gap-3 sm:grid-cols-3">
           {STACK_STEPS.map((s, i) => (
             <div key={s.label} className="relative rounded-xl border border-white/[0.06] bg-[#1A1C20] p-3.5">
-              <div className="mb-2 flex items-center justify-between">
+              <div className="mb-2 flex h-8 items-center justify-between">
                 <span className="text-[10px] font-semibold text-[color:var(--color-text-micro)]">
                   Step {i + 1}
                 </span>
