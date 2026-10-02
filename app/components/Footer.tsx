@@ -169,7 +169,7 @@ export function Footer() {
             className="absolute inset-0 -z-10"
             style={{
               backgroundImage: [
-                "linear-gradient(to bottom, #fbf8f3 0%, rgba(251,248,243,0) 30%, rgba(251,248,243,0) 70%, #fbf8f3 100%)",
+                "linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 70%, #ffffff 100%)",
                 "radial-gradient(ellipse 60% 70% at 50% 60%, rgba(255,196,120,0.85) 0%, rgba(247,163,92,0.45) 45%, transparent 75%)",
                 "linear-gradient(to bottom, #cfd4ec 0%, #f6e0cf 55%, #fde9d2 100%)",
               ].join(", "),

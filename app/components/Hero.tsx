@@ -56,8 +56,8 @@ export function Hero() {
   const nightOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
   const moonOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
   const zapOpacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
-  const sleepColor = useTransform(scrollYProgress, [0, 0.3], ["#a0a4ad", "#15171c"]);
-  const wakeDimOpacity = useTransform(scrollYProgress, [0, 0.4], [0.6, 0]);
+  const sleepColor = useTransform(scrollYProgress, [0, 0.3], ["#6a6f7c", "#15171c"]);
+  const wakeDimOpacity = useTransform(scrollYProgress, [0, 0.4], [0.3, 0]);
 
   return (
     <section id="top" ref={heroRef} className="relative overflow-hidden pb-20 pt-40 sm:pt-48">
@@ -66,7 +66,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative isolate mb-7 inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-xs text-[color:var(--color-text-secondary)]"
+          className="relative isolate mb-7 inline-flex items-center gap-2 rounded-full bg-surface-2 px-4 py-2 text-xs text-[color:var(--color-text-secondary)]"
         >
           <span className="animate-shimmer pointer-events-none absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-amber-300/60 via-fuchsia-300/60 to-sky-300/60 p-px [mask-composite:exclude] [mask-image:linear-gradient(#000_0_0),linear-gradient(#000_0_0)] [-webkit-mask-composite:xor]" />
           <span className="relative inline-grid h-[13px] w-[13px] flex-shrink-0 place-items-center">
@@ -169,7 +169,7 @@ export function Hero() {
           style={{
             backgroundImage: [
               "radial-gradient(ellipse 46% 52% at 50% 46%, rgba(255,196,120,0.95) 0%, rgba(247,163,92,0.55) 38%, transparent 72%)",
-              "linear-gradient(to bottom, #fbf8f3 0%, #fde9d2 38%, #f9d3b0 66%, #fbf8f3 100%)",
+              "linear-gradient(to bottom, #ffffff 0%, #fde9d2 38%, #f9d3b0 66%, #ffffff 100%)",
             ].join(", "),
             filter: "saturate(1.1)",
           }}
@@ -179,7 +179,7 @@ export function Hero() {
             className="absolute inset-0"
             style={{
               backgroundImage:
-                "linear-gradient(to bottom, #fbf8f3 0%, #cfd4ec 32%, #b9bfe0 58%, #d9d6ea 80%, #fbf8f3 100%)",
+                "linear-gradient(to bottom, #ffffff 0%, #cfd4ec 32%, #b9bfe0 58%, #d9d6ea 80%, #ffffff 100%)",
             }}
           />
           {STARS.map((s, i) => (
@@ -207,7 +207,7 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, #fbf8f3 0%, transparent 22%, transparent 58%, #fbf8f3 100%)",
+              "linear-gradient(to bottom, #ffffff 0%, transparent 22%, transparent 58%, #ffffff 100%)",
           }}
         />
       </div>

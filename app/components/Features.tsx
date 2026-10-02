@@ -136,7 +136,7 @@ export function Features() {
   return (
     <section id="services" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-24">
       <motion.div {...fadeUp} className="mb-14 text-center">
-        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-surface px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
+        <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-line/10 bg-surface px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
           <Sparkles size={12} /> What I do
         </div>
         <h2 className="font-[family-name:var(--font-display)] text-3xl font-normal tracking-tight sm:text-4xl">

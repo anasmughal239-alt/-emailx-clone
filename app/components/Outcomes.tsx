@@ -40,7 +40,7 @@ export function Outcomes() {
   return (
     <section id="results" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-24">
       <motion.div {...fadeUp} className="mb-4 flex justify-center">
-        <div className="inline-flex items-center gap-1.5 rounded-full bg-surface px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
+        <div className="inline-flex items-center gap-1.5 rounded-full border border-line/10 bg-surface px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
           <TrendingUp size={12} /> Proof
         </div>
       </motion.div>
