@@ -19,6 +19,14 @@ import {
   ZOOMINFO_SRC,
   APOLLO_SRC,
   MAKE_SRC,
+  PLUSVIBES_SRC,
+  BOUNCEBAN_SRC,
+  NEVERBOUNCE_SRC,
+  GMAIL_SRC,
+  OUTLOOK_SRC,
+  SLACK_SRC,
+  HEYREACH_SRC,
+  GROK_SRC,
   Mono,
   type ToolLogo,
 } from "./ui/ToolLogos";
@@ -36,6 +44,14 @@ const TOOLS: { name: string; logo: ToolLogo }[] = [
   { name: "Claude", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
   { name: "Make", logo: { kind: "img", src: MAKE_SRC } },
   { name: "Namecheap", logo: { kind: "img", src: NAMECHEAP_SRC } },
+  { name: "PlusVibes", logo: { kind: "img", src: PLUSVIBES_SRC } },
+  { name: "BounceBan", logo: { kind: "img", src: BOUNCEBAN_SRC } },
+  { name: "NeverBounce", logo: { kind: "img", src: NEVERBOUNCE_SRC } },
+  { name: "Google Workspace", logo: { kind: "img", src: GMAIL_SRC } },
+  { name: "Outlook", logo: { kind: "img", src: OUTLOOK_SRC } },
+  { name: "HeyReach", logo: { kind: "img", src: HEYREACH_SRC } },
+  { name: "Slack", logo: { kind: "img", src: SLACK_SRC } },
+  { name: "Grok Bot", logo: { kind: "img", src: GROK_SRC } },
 ];
 
 const STARS = [
