@@ -27,6 +27,8 @@ import {
   SLACK_SRC,
   HEYREACH_SRC,
   GROK_SRC,
+  OCEAN_SRC,
+  AIARK_SRC,
   Mono,
   type ToolLogo,
 } from "./ui/ToolLogos";
@@ -52,6 +54,8 @@ const TOOLS: { name: string; logo: ToolLogo }[] = [
   { name: "HeyReach", logo: { kind: "img", src: HEYREACH_SRC } },
   { name: "Slack", logo: { kind: "img", src: SLACK_SRC } },
   { name: "Grok Bot", logo: { kind: "img", src: GROK_SRC } },
+  { name: "Ocean.io", logo: { kind: "img", src: OCEAN_SRC } },
+  { name: "AI Ark", logo: { kind: "img", src: AIARK_SRC } },
 ];
 
 const STARS = [
