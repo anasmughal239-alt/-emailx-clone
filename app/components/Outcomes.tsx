@@ -69,7 +69,7 @@ export function Outcomes() {
             more replies with personalized, signal-based outreach
           </span>
         </div>
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
             <div className="mb-3 text-xs font-semibold uppercase tracking-wide text-[color:var(--color-text-micro)]">
               Generic cold template
@@ -112,7 +112,7 @@ export function Outcomes() {
         <div className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[color:var(--color-text-micro)]">
           <Wrench size={13} /> The stack behind the outreach
         </div>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {STACK_STEPS.map((s, i) => (
             <div key={s.label} className="relative rounded-xl border border-line/[0.06] bg-surface-2 p-3.5">
               <div className="mb-2 flex h-8 items-center justify-between">

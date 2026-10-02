@@ -241,7 +241,7 @@ export function Automation() {
         </p>
       </motion.div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {/* Outbound Autopilot */}
         <Card>
           <CardHeader
@@ -249,22 +249,28 @@ export function Automation() {
             desc="Build a flow once: it discovers, researches, and engages the right people on its own."
           />
 
-          <div className="flex items-center gap-1">
-            <div className="flex flex-1 flex-col gap-2">
+          <div className="flex flex-col items-stretch gap-1 sm:flex-row sm:items-center">
+            <div className="flex flex-col gap-2 sm:flex-1">
               <SignalChip icon={<Radio size={13} />} title="New signal" sub="Website visit detected" />
               <SignalChip icon={<DollarSign size={13} />} title="Funding raised" sub="$4.2M seed round" />
               <SignalChip icon={<Target size={13} />} title="ICP match" sub="92% fit score" />
             </div>
-            <FlowLink />
+            <div className="flex justify-center sm:block">
+              <span className="sm:hidden"><FlowLink vertical /></span>
+              <span className="hidden sm:block"><FlowLink /></span>
+            </div>
             <motion.div
               animate={{ scale: [1, 1.08, 1] }}
               transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-              className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-xl border border-amber-400/40 bg-inset text-amber-700"
+              className="grid h-10 w-10 flex-shrink-0 place-items-center self-center rounded-xl border border-amber-400/40 bg-inset text-amber-700"
             >
               <Zap size={17} />
             </motion.div>
-            <FlowLink />
-            <div className="flex flex-1 flex-col gap-2">
+            <div className="flex justify-center sm:block">
+              <span className="sm:hidden"><FlowLink vertical /></span>
+              <span className="hidden sm:block"><FlowLink /></span>
+            </div>
+            <div className="flex flex-col gap-2 sm:flex-1">
               <SignalChip icon={<Mail size={13} />} title="Email" sub="Personalized draft" />
               <SignalChip icon={<Linkedin size={13} />} title="LinkedIn" sub="Connection sent" />
             </div>
@@ -330,7 +336,7 @@ export function Automation() {
         </Card>
       </div>
 
-      <div className="mt-6 grid gap-6 md:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
         {/* Connect anywhere */}
         <Card>
           <CardHeader title="Connect anywhere" desc="Bring Clay, ZoomInfo, LinkedIn, CSVs, and your CRM into one flow." />

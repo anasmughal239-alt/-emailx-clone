@@ -144,7 +144,7 @@ export function Features() {
         </h2>
       </motion.div>
 
-      <div className="grid gap-10 lg:grid-cols-[260px_1fr]">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[260px_1fr]">
         {/* Sidebar — the four stages of the system, scroll-spy synced to the section in view */}
         <motion.div {...fadeUp} className="flex flex-col gap-2 lg:sticky lg:top-24 lg:self-start">
           {SIDEBAR_ITEMS.map((item, i) => (
@@ -409,7 +409,7 @@ export function Features() {
                   </span>
                 }
               >
-                <div className="grid gap-3 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div className="flex flex-col gap-2">
                     {[
                       { label: "Personal email", status: "Sent", icon: Mail },

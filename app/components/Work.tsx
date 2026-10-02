@@ -148,7 +148,7 @@ function ProjectRow({ p }: { p: (typeof PROJECTS)[number] }) {
             </p>
           </div>
         </div>
-        <div className="flex flex-shrink-0 flex-col items-start gap-1 pl-[3.4rem] sm:items-end sm:pl-0">
+        <div className="flex flex-shrink-0 flex-col items-start gap-1 pl-[3.625rem] sm:items-end sm:pl-0">
           {p.stat && (
             <span className="text-sm font-semibold text-[color:var(--color-accent-green)]">
               {p.stat}

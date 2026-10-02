@@ -51,7 +51,7 @@ function FAQAccordion() {
   const [openKey, setOpenKey] = useState<string | null>("General-1");
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[200px_1fr]">
+    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[200px_1fr]">
       <div className="flex gap-2 overflow-x-auto lg:sticky lg:top-24 lg:flex-col lg:self-start lg:overflow-visible">
         {FAQ_TABS.map((t) => (
           <a
@@ -214,7 +214,7 @@ export function Footer() {
       </section>
 
       <div className="mx-auto max-w-5xl px-4 py-12">
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           <div>
             <div className="flex items-center gap-2 font-semibold">
               {/* eslint-disable-next-line @next/next/no-img-element */}
