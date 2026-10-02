@@ -176,20 +176,20 @@ export function Outcomes() {
     <section id="results" className="mx-auto max-w-5xl scroll-mt-24 px-4 py-24">
       <motion.div {...fadeUp} className="mb-4 flex justify-center">
         <div className="inline-flex items-center gap-1.5 rounded-full border border-line/10 bg-surface px-3.5 py-1.5 text-xs text-[color:var(--color-text-secondary)]">
-          <TrendingUp size={12} /> Proof
+          <TrendingUp size={12} /> The approach
         </div>
       </motion.div>
       <motion.h2
         {...fadeUp}
         className="mb-3 text-center font-[family-name:var(--font-display)] text-3xl font-normal tracking-tight sm:text-4xl"
       >
-        Proof it works
+        Why signal-based outreach works
       </motion.h2>
       <motion.p
         {...fadeUp}
         className="mb-12 text-center text-sm text-[color:var(--color-text-micro)]"
       >
-        Why signal-based outreach gets replies.
+        Same offer, sent two ways.
       </motion.p>
 
       <motion.div

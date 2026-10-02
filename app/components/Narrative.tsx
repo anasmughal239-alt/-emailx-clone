@@ -28,7 +28,7 @@ export function Narrative() {
     offset: ["start 0.9", "start 0.4"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
   const blur = useTransform(scrollYProgress, [0, 1], [4, 0]);
   const filter = useTransform(blur, (v) => `blur(${v}px)`);
 

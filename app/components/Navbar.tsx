@@ -8,7 +8,7 @@ import { Magnetic } from "./ui/Magnetic";
 const NAV_LINKS = [
   { label: "Work", href: "#work-list" },
   { label: "What I do", href: "#services" },
-  { label: "Results", href: "#results" },
+  { label: "Approach", href: "#results" },
   { label: "Contact", href: "#contact" },
 ];
 

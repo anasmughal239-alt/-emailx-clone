@@ -122,7 +122,7 @@ const FOOTER_COLUMNS = [
     links: [
       { label: "Work", href: "#work-list" },
       { label: "What I do", href: "#services" },
-      { label: "Results", href: "#results" },
+      { label: "Approach", href: "#results" },
     ],
   },
   {

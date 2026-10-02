@@ -14,14 +14,25 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-export const metadata: Metadata = {
-  title: "Anas Ashfaq Mughal — GTM Engineer & Builder",
-  description:
-    "I design and run the outbound systems B2B teams use to book meetings — deliverability, list-building, copy, and follow-up, run as one machine.",
-};
+const SITE_URL = "https://anasashfaqmughal.vercel.app";
+const TITLE = "Anas Ashfaq Mughal — GTM Engineer & Builder";
+const DESCRIPTION =
+  "I design and run the outbound systems B2B teams use to book meetings — deliverability, list-building, copy, and follow-up, run as one machine.";
 
-const NOISE =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E";
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "Anas Ashfaq Mughal",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+};
 
 export default function RootLayout({
   children,
@@ -31,12 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${newsreader.variable} ${inter.variable}`}>
       <body className="relative bg-bg font-sans text-fg antialiased">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none fixed inset-0 z-0 opacity-[0.02] mix-blend-multiply"
-          style={{ backgroundImage: `url("${NOISE}")` }}
-        />
-        <div className="relative z-10">{children}</div>
+        <div className="relative">{children}</div>
       </body>
     </html>
   );

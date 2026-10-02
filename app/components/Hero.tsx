@@ -11,22 +11,14 @@ import {
   HubspotMark,
   ClaudeMark,
   CALENDLY_SRC,
-  NAMECHEAP_SRC,
   SMARTLEAD_SRC,
   INSTANTLY_SRC,
-  PROSPEO_SRC,
   CLAY_SRC,
   ZOOMINFO_SRC,
   APOLLO_SRC,
   MAKE_SRC,
   PLUSVIBES_SRC,
-  BOUNCEBAN_SRC,
-  NEVERBOUNCE_SRC,
-  GMAIL_SRC,
-  OUTLOOK_SRC,
   SLACK_SRC,
-  HEYREACH_SRC,
-  GROK_SRC,
   Mono,
   type ToolLogo,
 } from "./ui/ToolLogos";
@@ -34,24 +26,16 @@ import {
 const TOOLS: { name: string; logo: ToolLogo }[] = [
   { name: "Clay", logo: { kind: "img", src: CLAY_SRC } },
   { name: "Apollo", logo: { kind: "img", src: APOLLO_SRC } },
-  { name: "Instantly", logo: { kind: "img", src: INSTANTLY_SRC } },
-  { name: "Smartlead", logo: { kind: "img", src: SMARTLEAD_SRC } },
-  { name: "n8n", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
-  { name: "HubSpot", logo: { kind: "svg", Comp: HubspotMark, tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]" } },
-  { name: "Calendly", logo: { kind: "img", src: CALENDLY_SRC } },
-  { name: "Prospeo", logo: { kind: "img", src: PROSPEO_SRC } },
   { name: "ZoomInfo", logo: { kind: "img", src: ZOOMINFO_SRC } },
   { name: "Claude", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
-  { name: "Make", logo: { kind: "img", src: MAKE_SRC } },
-  { name: "Namecheap", logo: { kind: "img", src: NAMECHEAP_SRC } },
+  { name: "Instantly", logo: { kind: "img", src: INSTANTLY_SRC } },
+  { name: "Smartlead", logo: { kind: "img", src: SMARTLEAD_SRC } },
   { name: "PlusVibes", logo: { kind: "img", src: PLUSVIBES_SRC } },
-  { name: "BounceBan", logo: { kind: "img", src: BOUNCEBAN_SRC } },
-  { name: "NeverBounce", logo: { kind: "img", src: NEVERBOUNCE_SRC } },
-  { name: "Google Workspace", logo: { kind: "img", src: GMAIL_SRC } },
-  { name: "Outlook", logo: { kind: "img", src: OUTLOOK_SRC } },
-  { name: "HeyReach", logo: { kind: "img", src: HEYREACH_SRC } },
+  { name: "n8n", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
+  { name: "Make", logo: { kind: "img", src: MAKE_SRC } },
+  { name: "HubSpot", logo: { kind: "svg", Comp: HubspotMark, tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]" } },
   { name: "Slack", logo: { kind: "img", src: SLACK_SRC } },
-  { name: "Grok Bot", logo: { kind: "img", src: GROK_SRC } },
+  { name: "Calendly", logo: { kind: "img", src: CALENDLY_SRC } },
 ];
 
 const STARS = [
@@ -80,11 +64,9 @@ export function Hero() {
   return (
     <section id="top" ref={heroRef} className="relative overflow-hidden pb-20 pt-40 sm:pt-48">
       <div className="mx-auto flex max-w-3xl flex-col items-center px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative isolate mb-7 inline-flex items-center gap-2 rounded-full bg-surface-2 px-4 py-2 text-xs text-[color:var(--color-text-secondary)]"
+        <div
+          style={{ "--d": "0s" } as React.CSSProperties}
+          className="animate-fade-up relative isolate mb-7 inline-flex items-center gap-2 rounded-full bg-surface-2 px-4 py-2 text-xs text-[color:var(--color-text-secondary)]"
         >
           <span className="animate-shimmer pointer-events-none absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-amber-300/60 via-fuchsia-300/60 to-sky-300/60 p-px [mask-composite:exclude] [mask-image:linear-gradient(#000_0_0),linear-gradient(#000_0_0)] [-webkit-mask-composite:xor]" />
           <span className="relative inline-grid h-[13px] w-[13px] flex-shrink-0 place-items-center">
@@ -96,34 +78,28 @@ export function Hero() {
             </motion.span>
           </span>
           GTM Engineer &amp; Builder — Karachi
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-          className="font-[family-name:var(--font-display)] text-[2.75rem] font-normal leading-[1.08] tracking-tight sm:text-6xl"
+        <h1
+          style={{ "--d": "0.05s" } as React.CSSProperties}
+          className="animate-fade-up font-[family-name:var(--font-display)] text-[2.75rem] font-normal leading-[1.08] tracking-tight sm:text-6xl"
         >
           Pipeline that runs while you{" "}
           <motion.span style={{ color: sleepColor }}>sleep</motion.span>.
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-          className="mt-6 max-w-xl text-lg text-[color:var(--color-text-secondary)]"
+        <p
+          style={{ "--d": "0.1s" } as React.CSSProperties}
+          className="animate-fade-up mt-6 max-w-xl text-lg text-[color:var(--color-text-secondary)]"
         >
           I design and run the outbound systems B2B teams use to book
           meetings — deliverability, list-building, copy, and follow-up,
           built as one machine instead of six disconnected tools.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-          className="mt-8 flex flex-wrap justify-center gap-3"
+        <div
+          style={{ "--d": "0.15s" } as React.CSSProperties}
+          className="animate-fade-up mt-8 flex flex-wrap justify-center gap-3"
         >
           <Magnetic>
             <motion.a
@@ -141,9 +117,9 @@ export function Hero() {
             whileTap={{ scale: 0.97 }}
             className="flex items-center gap-2 rounded-full border border-line/15 px-6 py-3 font-medium text-fg transition-colors hover:border-line/30"
           >
-            See results
+            See how it works
           </motion.a>
-        </motion.div>
+        </div>
 
       </div>
 
