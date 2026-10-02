@@ -7,7 +7,7 @@ import {
   HubspotMark,
   ClaudeMark,
   CalendlyMark,
-  NamecheapMark,
+  NAMECHEAP_SRC,
   SMARTLEAD_SRC,
   INSTANTLY_SRC,
   PROSPEO_SRC,
@@ -69,7 +69,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
       { name: "BounceBan", desc: "Verification", logo: { kind: "img", src: BOUNCEBAN_SRC } },
       { name: "NeverBounce", desc: "Verification", logo: { kind: "img", src: NEVERBOUNCE_SRC } },
       { name: "Google Workspace", desc: "Inboxes and warmup", logo: { kind: "img", src: GMAIL_SRC } },
-      { name: "Namecheap", desc: "Sending domains", logo: { kind: "svg", Comp: NamecheapMark, tint: "rgba(222,55,35,0.18)", fg: "text-[#de3723]" } },
+      { name: "Namecheap", desc: "Sending domains", logo: { kind: "img", src: NAMECHEAP_SRC } },
     ],
   },
   {

@@ -11,7 +11,7 @@ import {
   HubspotMark,
   ClaudeMark,
   CalendlyMark,
-  NamecheapMark,
+  NAMECHEAP_SRC,
   SMARTLEAD_SRC,
   INSTANTLY_SRC,
   PROSPEO_SRC,
@@ -35,7 +35,7 @@ const TOOLS: { name: string; logo: ToolLogo }[] = [
   { name: "ZoomInfo", logo: { kind: "img", src: ZOOMINFO_SRC } },
   { name: "Claude", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
   { name: "Make", logo: { kind: "img", src: MAKE_SRC } },
-  { name: "Namecheap", logo: { kind: "svg", Comp: NamecheapMark, tint: "rgba(222,55,35,0.18)", fg: "text-[#de3723]" } },
+  { name: "Namecheap", logo: { kind: "img", src: NAMECHEAP_SRC } },
 ];
 
 const STARS = [
