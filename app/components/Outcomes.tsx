@@ -32,7 +32,6 @@ import {
   CALENDLY_SRC,
   type ToolLogo,
 } from "./ui/ToolLogos";
-import { CountUp } from "./ui/CountUp";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -190,7 +189,7 @@ export function Outcomes() {
         {...fadeUp}
         className="mb-12 text-center text-sm text-[color:var(--color-text-micro)]"
       >
-        Real campaign results — not a hypothetical.
+        Why signal-based outreach gets replies.
       </motion.p>
 
       <motion.div
@@ -200,9 +199,11 @@ export function Outcomes() {
         className="spotlight mt-6 rounded-3xl border border-line/[0.08] bg-surface p-6 transition-colors hover:border-line/15"
       >
         <div className="mb-5 flex flex-wrap items-center gap-3">
-          <CountUp to={3} suffix="x" className="text-3xl font-semibold text-[color:var(--color-accent-green)]" />
+          <span className="text-xl font-semibold text-[color:var(--color-accent-green)] sm:text-2xl">
+            Same offer, two approaches
+          </span>
           <span className="text-sm text-[color:var(--color-text-secondary)]">
-            more replies with personalized, signal-based outreach
+            The difference is starting from a real signal
           </span>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
