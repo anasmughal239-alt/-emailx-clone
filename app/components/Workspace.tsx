@@ -15,7 +15,7 @@ import {
   ZOOMINFO_SRC,
   APOLLO_SRC,
   MAKE_SRC,
-  PLUSVIBES_SRC,
+  PLUSVIBE_SRC,
   BOUNCEBAN_SRC,
   SLACK_SRC,
   AIARK_SRC,
@@ -67,7 +67,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
   {
     title: "Sending and deliverability",
     tools: [
-      { name: "PlusVibes", desc: "Sending at volume", logo: { kind: "img", src: PLUSVIBES_SRC } },
+      { name: "PlusVibe", desc: "Sending at volume", logo: { kind: "img", src: PLUSVIBE_SRC } },
       { name: "Instantly", desc: "Campaign sending", logo: { kind: "img", src: INSTANTLY_SRC } },
       { name: "Smartlead", desc: "Campaign sending", logo: { kind: "img", src: SMARTLEAD_SRC } },
       { name: "BounceBan", desc: "Verification", logo: { kind: "img", src: BOUNCEBAN_SRC } },

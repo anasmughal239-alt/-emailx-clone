@@ -57,8 +57,8 @@ export const PROSPEO_SRC = "/logos/prospeo.png";
 export const CLAY_SRC = "/logos/clay.png";
 /** Real ZoomInfo mark (from user-provided screenshot). */
 export const ZOOMINFO_SRC = "/logos/zoominfo.png";
-/** Real PlusVibes mark (from user-provided screenshot). */
-export const PLUSVIBES_SRC = "/logos/plusvibes.png";
+/** Real PlusVibe mark (from user-provided screenshot). */
+export const PLUSVIBE_SRC = "/logos/plusvibe.png";
 /** Real Email Bison mark (from user-provided screenshot). */
 export const EMAILBISON_SRC = "/logos/emailbison.png";
 /** Real BounceBan mark (from user-provided screenshot). */

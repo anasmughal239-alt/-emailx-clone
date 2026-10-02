@@ -25,7 +25,7 @@ import {
   NEVERBOUNCE_SRC,
   INSTANTLY_SRC,
   SMARTLEAD_SRC,
-  PLUSVIBES_SRC,
+  PLUSVIBE_SRC,
   N8nMark,
   HubspotMark,
   ClaudeMark,
@@ -49,7 +49,7 @@ const TOOL: Record<string, Tool> = {
   bounceban: { name: "BounceBan", logo: { kind: "img", src: BOUNCEBAN_SRC } },
   instantly: { name: "Instantly", logo: { kind: "img", src: INSTANTLY_SRC } },
   smartlead: { name: "Smartlead", logo: { kind: "img", src: SMARTLEAD_SRC } },
-  plusvibes: { name: "PlusVibes", logo: { kind: "img", src: PLUSVIBES_SRC } },
+  plusvibe: { name: "PlusVibe", logo: { kind: "img", src: PLUSVIBE_SRC } },
   claude: {
     name: "Claude",
     logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" },
@@ -127,7 +127,7 @@ const STEPS: {
     icon: Send,
     tint: "rgba(236,72,153,0.14)",
     fg: "text-pink-600",
-    tools: [TOOL.instantly, TOOL.smartlead, TOOL.plusvibes, TOOL.heyreach],
+    tools: [TOOL.instantly, TOOL.smartlead, TOOL.plusvibe, TOOL.heyreach],
   },
   {
     title: "Reply & book",
