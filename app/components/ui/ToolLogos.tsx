@@ -63,6 +63,8 @@ export const PLUSVIBES_SRC = "/logos/plusvibes.png";
 export const EMAILBISON_SRC = "/logos/emailbison.png";
 /** Real BounceBan mark (from user-provided screenshot). */
 export const BOUNCEBAN_SRC = "/logos/bounceban.png";
+/** Real Slack mark (from user-provided file). */
+export const SLACK_SRC = "/logos/slack.png";
 
 /** Colored initials fallback for tools with no freely-licensed logo asset available. */
 export function Mono({ label, tint, fg }: { label: string; tint: string; fg: string }) {

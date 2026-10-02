@@ -19,6 +19,7 @@ import {
   ZOOMINFO_SRC,
   PROSPEO_SRC,
   BOUNCEBAN_SRC,
+  SLACK_SRC,
   INSTANTLY_SRC,
   SMARTLEAD_SRC,
   EMAILBISON_SRC,
@@ -65,7 +66,7 @@ const TOOL: Record<string, Tool> = {
   },
   slack: {
     name: "Slack",
-    logo: { kind: "mono", label: "S", tint: "rgba(224,30,90,0.18)", fg: "text-[#d6336c]" },
+    logo: { kind: "img", src: SLACK_SRC },
   },
   hubspot: {
     name: "HubSpot",

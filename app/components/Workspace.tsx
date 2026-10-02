@@ -17,6 +17,7 @@ import {
   PLUSVIBES_SRC,
   EMAILBISON_SRC,
   BOUNCEBAN_SRC,
+  SLACK_SRC,
   Mono,
   type ToolLogo,
 } from "./ui/ToolLogos";
@@ -75,7 +76,7 @@ const STACK_CATEGORIES: { title: string; tools: Tool[] }[] = [
       { name: "Claude", desc: "Copy, classification, scoring", logo: { kind: "svg", Comp: ClaudeMark, tint: "rgba(217,119,87,0.18)", fg: "text-[#d97757]" } },
       { name: "n8n", desc: "Reply routing", logo: { kind: "svg", Comp: N8nMark, tint: "rgba(234,75,113,0.18)", fg: "text-[#ea4b71]" } },
       { name: "Make", desc: "Workflow automation", logo: { kind: "mono", label: "Mk", tint: "rgba(124,58,237,0.15)", fg: "text-violet-700" } },
-      { name: "Slack", desc: "Interested-reply alerts", logo: { kind: "mono", label: "S", tint: "rgba(224,30,90,0.18)", fg: "text-[#d6336c]" } },
+      { name: "Slack", desc: "Interested-reply alerts", logo: { kind: "img", src: SLACK_SRC } },
       { name: "HubSpot", desc: "CRM sync", logo: { kind: "svg", Comp: HubspotMark, tint: "rgba(255,122,89,0.18)", fg: "text-[#ff7a59]" } },
       { name: "Calendly", desc: "Demo booking", logo: { kind: "svg", Comp: CalendlyMark, tint: "rgba(0,107,255,0.18)", fg: "text-[#0062e6]" } },
       { name: "HeyReach", desc: "LinkedIn outreach", logo: { kind: "mono", label: "HR", tint: "rgba(99,102,241,0.18)", fg: "text-indigo-600" } },
