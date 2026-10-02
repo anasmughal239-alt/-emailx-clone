@@ -193,7 +193,9 @@ export function Footer() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Magnetic>
               <motion.a
-                href="https://wa.me/447577305736"
+                href="https://whereby.com/gtmeanas"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.04, y: -1 }}
                 whileTap={{ scale: 0.97 }}
                 className="flex items-center gap-2 rounded-full bg-fg px-6 py-3 font-medium text-bg transition-colors hover:bg-fg/85"
