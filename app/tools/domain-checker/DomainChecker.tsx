@@ -158,6 +158,24 @@ export function DomainChecker() {
   );
 }
 
+/** Render `backtick` spans from finding text as inline code. */
+function Text({ children }: { children: string }) {
+  const parts = children.split(/`([^`]+)`/);
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <code key={i} className="rounded bg-inset px-1 py-0.5 font-mono text-[0.85em]">
+            {part}
+          </code>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
+}
+
 function Report({ report }: { report: DomainReport }) {
   const r = READINESS[report.readiness];
   const unverified = report.readiness === "unverified";
@@ -196,14 +214,16 @@ function Report({ report }: { report: DomainReport }) {
             <ul className="mt-3 space-y-3">
               {check.findings.map((f, i) => (
                 <li key={`${f.code}-${i}`} className="text-sm">
-                  <p className="font-medium">{f.title}</p>
+                  <p className="font-medium"><Text>{f.title}</Text></p>
                   {f.detail && (
-                    <p className="mt-0.5 break-words text-[color:var(--color-text-secondary)]">{f.detail}</p>
+                    <p className="mt-0.5 break-words text-[color:var(--color-text-secondary)]">
+                      <Text>{f.detail}</Text>
+                    </p>
                   )}
                   {f.fix && f.severity !== "ok" && (
                     <p className="mt-1 break-words text-[color:var(--color-text-micro)]">
                       <span className="font-medium text-fg">Fix: </span>
-                      {f.fix}
+                      <Text>{f.fix}</Text>
                     </p>
                   )}
                 </li>
