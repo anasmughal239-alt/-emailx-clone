@@ -70,7 +70,8 @@ export default function DomainCheckerPage() {
             ))}
           </div>
           <p className="mt-8 text-sm text-[color:var(--color-text-micro)]">
-            Lookups run over DNS-over-HTTPS; nothing about your domain is stored. Powered by{" "}
+            Lookups run over DNS-over-HTTPS. Checks aren&apos;t saved; if you ask for the report by email, I
+            keep your email, domain and results so I can reply. Powered by{" "}
             <a
               href="https://github.com/anasmughal239-alt/coldwatch"
               className="underline underline-offset-2 hover:text-fg"
