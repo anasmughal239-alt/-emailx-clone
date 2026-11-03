@@ -105,9 +105,12 @@ export async function evaluateDkim(
       findings.push({
         code: "dkim.expected_missing",
         severity: "warn",
-        title: `No DKIM key at ${opts.provider?.name}'s expected selector`,
-        detail: `Tried ${providerSelectors.map((s) => `${s}._domainkey.${d}`).join(", ")}.`,
-        fix: `Enable and publish DKIM in the ${opts.provider?.name} admin console.`,
+        title: `No DKIM key at ${opts.provider?.name}'s default selector`,
+        detail:
+          `Looked for ${providerSelectors.map((s) => `${s}._domainkey.${d}`).join(", ")}. ` +
+          `This usually means DKIM was never turned on. Large companies sometimes sign under a custom selector instead; ` +
+          `if that's you, re-check with your selector to confirm.`,
+        fix: `Turn on DKIM in the ${opts.provider?.name} admin console and publish the TXT record it gives you.`,
       });
     } else {
       findings.push({

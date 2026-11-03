@@ -22,7 +22,7 @@ const READINESS: Record<DomainReport["readiness"], { label: string; cls: string;
     line: "The basics are in place. Warm-up, volume and copy decide the rest.",
   },
   "at-risk": {
-    label: "At risk",
+    label: "Needs attention",
     cls: "text-amber-700",
     line: "Mail will authenticate, but there are gaps that cost you inbox placement.",
   },
@@ -180,6 +180,9 @@ function Report({ report }: { report: DomainReport }) {
   const r = READINESS[report.readiness];
   const unverified = report.readiness === "unverified";
   const needsHelp = report.readiness !== "ready";
+  const flagged = report.checks
+    .filter((c) => c.status === "warn" || c.status === "unknown" || c.status === "crit")
+    .map((c) => CHECK_NAME[c.check] ?? c.check);
 
   return (
     <div className="mt-8 space-y-4">
@@ -197,7 +200,11 @@ function Report({ report }: { report: DomainReport }) {
               </span>
             )}
           </p>
-          <p className="mt-1 text-sm text-[color:var(--color-text-secondary)]">{r.line}</p>
+          <p className="mt-1 text-sm text-[color:var(--color-text-secondary)]">
+            {report.readiness === "at-risk" && flagged.length > 0
+              ? `Mail will authenticate. ${flagged.length === 1 ? "One thing" : `${flagged.length} things`} to look at: ${flagged.join(", ")}.`
+              : r.line}
+          </p>
         </div>
       </div>
 
@@ -233,6 +240,8 @@ function Report({ report }: { report: DomainReport }) {
         );
       })}
 
+      {!unverified && <EmailReport report={report} />}
+
       <div className="rounded-2xl bg-fg p-6 text-bg sm:flex sm:items-center sm:justify-between sm:gap-6">
         <div>
           <p className="text-lg font-semibold">
@@ -252,5 +261,99 @@ function Report({ report }: { report: DomainReport }) {
         </a>
       </div>
     </div>
+  );
+}
+
+/** Strip the raw DNS data (SPF IP lists etc.) so the stored report stays small. */
+function summarize(report: DomainReport) {
+  return {
+    domain: report.domain,
+    checkedAt: report.checkedAt,
+    grade: report.grade,
+    score: report.score,
+    readiness: report.readiness,
+    checks: report.checks.map((c) => ({ check: c.check, status: c.status, findings: c.findings })),
+  };
+}
+
+function EmailReport({ report }: { report: DomainReport }) {
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
+  const [error, setError] = useState<string | null>(null);
+
+  async function onSubmit(e: FormEvent) {
+    e.preventDefault();
+    if (state === "sending") return;
+    setState("sending");
+    setError(null);
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, domain: report.domain, company, report: summarize(report) }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error ?? "Something went wrong.");
+      setState("sent");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setState("idle");
+    }
+  }
+
+  if (state === "sent") {
+    return (
+      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-sm text-emerald-900">
+        <p className="font-semibold">Got it.</p>
+        <p className="mt-1">
+          I&apos;ll send the report for {report.domain} and a short fix plan to {email}.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={onSubmit} className="rounded-2xl border border-line/10 bg-surface p-5">
+      <p className="font-semibold">Get this report and a fix plan by email</p>
+      <p className="mt-1 text-sm text-[color:var(--color-text-secondary)]">
+        I&apos;ll review {report.domain} myself and send what to change, in order. No newsletter.
+      </p>
+      <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+        <label htmlFor="lead-email" className="sr-only">
+          Work email
+        </label>
+        <input
+          id="lead-email"
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="you@company.com"
+          autoComplete="email"
+          className="min-w-0 flex-1 rounded-xl bg-inset px-4 py-3 text-base outline-none ring-fg/20 focus:ring-2"
+        />
+        {/* Honeypot for bots; hidden from people and screen readers. */}
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          name="company"
+          className="hidden"
+        />
+        <button
+          type="submit"
+          disabled={state === "sending"}
+          className="flex items-center justify-center gap-2 rounded-xl bg-fg px-5 py-3 font-medium text-bg transition-colors hover:bg-fg/85 disabled:opacity-50"
+        >
+          {state === "sending" ? <Loader2 size={18} className="animate-spin" /> : null}
+          Email me the report
+        </button>
+      </div>
+      {error && <p className="mt-2 text-sm text-red-700">{error}</p>}
+    </form>
   );
 }
