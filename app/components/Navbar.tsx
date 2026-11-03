@@ -6,13 +6,14 @@ import { Menu, X } from "lucide-react";
 import { Magnetic } from "./ui/Magnetic";
 
 const NAV_LINKS = [
-  { label: "Work", href: "#work-list" },
-  { label: "What I do", href: "#services" },
-  { label: "Approach", href: "#results" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work-list" },
+  { label: "What I do", href: "/#services" },
+  { label: "Approach", href: "/#results" },
+  { label: "Free checker", href: "/tools/domain-checker" },
+  { label: "Contact", href: "/#contact" },
 ];
 
-const CALL_LINK = "#book";
+const CALL_LINK = "/#book";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,7 +21,7 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <nav className="flex w-full max-w-5xl items-center justify-between gap-4 rounded-2xl border border-line/10 bg-surface px-5 py-2.5 shadow-sm">
-        <a href="#top" className="flex items-center gap-2.5 font-semibold">
+        <a href="/#top" className="flex items-center gap-2.5 font-semibold">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.svg" alt="" width={30} height={30} className="h-[30px] w-[30px]" />
           <span>Anas Ashfaq Mughal</span>
